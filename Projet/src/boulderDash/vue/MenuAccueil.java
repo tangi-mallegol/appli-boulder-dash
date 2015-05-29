@@ -24,17 +24,25 @@ public class MenuAccueil extends JFrame{
 		setLocationRelativeTo(null);
 		setVisible(true);
 		
+		Ecouteur ecouteur = new Ecouteur();
+		
 		bEditeur = new JButton("Editer");
+		bEditeur.addActionListener(ecouteur);
+		
 		bJeu 	 = new JButton("Jouer");
+		bJeu.addActionListener(ecouteur);
 		
 		add(new JLabel("Bienvenue sur notre putain de jeu trop bien !"), BorderLayout.NORTH);
 		add(bEditeur, BorderLayout.CENTER);
 		add(bJeu, BorderLayout.SOUTH);		
 	}
 	
-	private class EditeurListener implements ActionListener{		
+	private class Ecouteur implements ActionListener{		
 		public void actionPerformed(ActionEvent e) {
-			
+			if(e.getSource()==bEditeur)
+				System.out.println("Je veux éditer !");
+			else if(e.getSource()==bJeu)
+				System.out.println("Je veux jouer !");
 		}
 	}
 }
