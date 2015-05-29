@@ -32,11 +32,9 @@ public class PanneauMenu {
 	
 	
 	private class JeuListener implements ActionListener{
-		
 		public JeuListener(){
 			super();
 		}
-		
 		public void actionPerformed(ActionEvent e) {
 			// On renvoi vers le panneau de jeu
 		}
