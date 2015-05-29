@@ -5,14 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class PanneauMenu {
+public class MenuAccueil {
 	
 	private JButton Editeur;
 	private JButton Jeu;
 	private EditeurListener EditeurListener;
 	private JeuListener JeuListener;
 	
-	public PanneauMenu(){
+	public MenuAccueil(){
 		this.Editeur = new JButton();
 		this.Jeu = new JButton();
 		this.EditeurListener = new EditeurListener();
