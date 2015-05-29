@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import boulderDash.controller.ControllerMenu;
+import boulderDash.controleur.ControleurMenu;
 
 public class MenuAccueil {
 	
@@ -13,9 +13,9 @@ public class MenuAccueil {
 	private JButton Jeu;
 	private EditeurListener EditeurListener;
 	private JeuListener JeuListener;
-	private ControllerMenu ControlleurMenu;
+	private ControleurMenu ControlleurMenu;
 	
-	public MenuAccueil(ControllerMenu ControllerMenu){
+	public MenuAccueil(ControleurMenu ControllerMenu){
 		this.Editeur = new JButton();
 		this.Jeu = new JButton();
 		this.EditeurListener = new EditeurListener();
