@@ -1,4 +1,4 @@
-package boulder_dash.controller;
+package boulderDash.controller;
 
 public class ControllerMenu {
 	

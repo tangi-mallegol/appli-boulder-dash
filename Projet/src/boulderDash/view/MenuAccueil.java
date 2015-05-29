@@ -1,11 +1,11 @@
-package boulder_dash.view;
+package boulderDash.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import boulder_dash.controller.ControllerMenu;
+import boulderDash.controller.ControllerMenu;
 
 public class MenuAccueil {
 	
