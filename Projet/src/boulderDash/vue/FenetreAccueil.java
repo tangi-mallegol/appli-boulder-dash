@@ -11,13 +11,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MenuAccueil extends JFrame{
+public class FenetreAccueil extends JFrame{
 	
 	private JButton bEditeur;
 	private JButton bJeu;
-	private ControleurMenu ControleurMenu;
+	private ControleurMenu controleurMenu;
 	
-	public MenuAccueil(ControleurMenu ControllerMenu){
+	public FenetreAccueil(ControleurMenu ControllerMenu){
 		setTitle("Boulder Dash");
 		setSize(300, 250);
 		setResizable(true);
@@ -25,7 +25,7 @@ public class MenuAccueil extends JFrame{
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		Ecouteur ecouteur = new Ecouteur();
+		Ecouteur ecouteur = new Ecouteur(this);
 		
 		bEditeur = new JButton("Editer");
 		bEditeur.addActionListener(ecouteur);
@@ -40,12 +40,21 @@ public class MenuAccueil extends JFrame{
 		setVisible(true);
 	}
 	
-	private class Ecouteur implements ActionListener{		
+	private class Ecouteur implements ActionListener{
+		private FenetreAccueil menuAccueil;
+		
+		public Ecouteur(FenetreAccueil menuAccueil){
+			this.menuAccueil = menuAccueil;
+		}
+		
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource()==bEditeur)
-				System.out.println("Je veux éditer !");
-			else if(e.getSource()==bJeu)
-				System.out.println("Je veux jouer !");
+			if(e.getSource()==bEditeur){
+				menuAccueil.dispose();
+				contoleurMenu.OuvrirEditeur();
+			}else if(e.getSource()==bJeu){
+				menuAccueil.dispose();
+				contoleurMenu.OuvrirJeu();				
+			}
 		}
 	}
 }

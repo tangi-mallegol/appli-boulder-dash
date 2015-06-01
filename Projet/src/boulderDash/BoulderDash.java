@@ -3,7 +3,7 @@ package boulderDash;
 import javax.swing.UIManager;
 
 import boulderDash.controleur.ControleurMenu;
-import boulderDash.vue.MenuAccueil;
+import boulderDash.vue.FenetreAccueil;
 
 
 public class BoulderDash {
@@ -15,6 +15,6 @@ public class BoulderDash {
 			e.printStackTrace();
 		}
 
-		new MenuAccueil(new ControleurMenu());
+		new FenetreAccueil(new ControleurMenu());
 	}
 }
