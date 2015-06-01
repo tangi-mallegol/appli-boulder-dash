@@ -22,7 +22,8 @@ public class MenuAccueil extends JFrame{
 		setSize(300, 250);
 		setResizable(true);
 		setLocationRelativeTo(null);
-		setVisible(true);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		Ecouteur ecouteur = new Ecouteur();
 		
@@ -34,7 +35,9 @@ public class MenuAccueil extends JFrame{
 		
 		add(new JLabel("Bienvenue sur notre putain de jeu trop bien !"), BorderLayout.NORTH);
 		add(bEditeur, BorderLayout.CENTER);
-		add(bJeu, BorderLayout.SOUTH);		
+		add(bJeu, BorderLayout.SOUTH);
+		
+		setVisible(true);
 	}
 	
 	private class Ecouteur implements ActionListener{		
