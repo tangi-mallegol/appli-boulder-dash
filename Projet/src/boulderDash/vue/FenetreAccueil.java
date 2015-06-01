@@ -25,6 +25,8 @@ public class FenetreAccueil extends JFrame{
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		controleurMenu = new ControleurMenu();
+		
 		Ecouteur ecouteur = new Ecouteur(this);
 		
 		bEditeur = new JButton("Editer");
@@ -50,10 +52,10 @@ public class FenetreAccueil extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==bEditeur){
 				menuAccueil.dispose();
-				contoleurMenu.OuvrirEditeur();
+				controleurMenu.OuvrirEditeur();
 			}else if(e.getSource()==bJeu){
 				menuAccueil.dispose();
-				contoleurMenu.OuvrirJeu();				
+				controleurMenu.OuvrirJeu();				
 			}
 		}
 	}
