@@ -8,19 +8,17 @@ public class ControleurMenu {
 		
 	}
 	
-	public ControleurEditeur NewControlleurEditeur(){
+	public void OuvrirEditeur(){
 		if(!Bclique){
 			Bclique = true;
-			return new ControleurEditeur();
+			new FenetreEditeur(new ControleurEditeur());
 		}
-		return null;
 	}
 	
-	public ControleurJeu NewControlleurJeu(){
+	public void OuvrirJeu(){
 		if(!Bclique){
 			Bclique = true;
-			return new ControleurJeu();
+			new FenetreJeu(new ControleurJeu());
 		}
-		return null;
 	}
 }
