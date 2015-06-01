@@ -3,9 +3,9 @@ package boulderDash.controleur;
 import boulderDash.vue.FenetreEditeur;
 import boulderDash.vue.FenetreJeu;
 
-public class ControleurMenu {
+public class ControleurAccueil {
 	
-	public ControleurMenu(){
+	public ControleurAccueil(){
 		
 	}
 	
@@ -14,6 +14,6 @@ public class ControleurMenu {
 	}
 	
 	public void OuvrirJeu(){
-		//new FenetreJeu(new ControleurJeu());
+		new FenetreJeu(new ControleurJeu());
 	}
 }
