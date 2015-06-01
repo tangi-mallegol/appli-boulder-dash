@@ -15,17 +15,17 @@ public class FenetreAccueil extends JFrame{
 	
 	private JButton bEditeur;
 	private JButton bJeu;
-	private ControleurMenu controleurMenu;
+	private ControleurAccueil controleurMenu;
 	
-	public FenetreAccueil(ControleurMenu ControllerMenu){
+	public FenetreAccueil(ControleurAccueil ControllerMenu){
 		setTitle("Boulder Dash");
-		setSize(300, 250);
+		setSize(350, 250);
 		setResizable(true);
 		setLocationRelativeTo(null);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		controleurMenu = new ControleurMenu();
+		controleurMenu = new ControleurAccueil();
 		
 		Ecouteur ecouteur = new Ecouteur(this);
 		
@@ -36,8 +36,8 @@ public class FenetreAccueil extends JFrame{
 		bJeu.addActionListener(ecouteur);
 		
 		add(new JLabel("Bienvenue sur notre putain de jeu trop bien !"), BorderLayout.NORTH);
-		add(bEditeur, BorderLayout.CENTER);
-		add(bJeu, BorderLayout.SOUTH);
+		add(bJeu, BorderLayout.CENTER);
+		add(bEditeur, BorderLayout.SOUTH);
 		
 		setVisible(true);
 	}
