@@ -8,6 +8,7 @@ import boulderDash.vue.FenetreAccueil;
 
 public class BoulderDash {
 	public static void main(String[] args) {
+		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 		// Choix du LookAndFeel pour l'habillage graphique.
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
