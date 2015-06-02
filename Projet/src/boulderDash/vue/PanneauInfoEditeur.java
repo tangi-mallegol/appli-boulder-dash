@@ -34,7 +34,7 @@ public class PanneauInfoEditeur extends JPanel{
 	private void RemplirTableau(){
 		BufferedImage bigImg;
 		try {
-			bigImg = ImageIO.read(new File("./donnees/amoeba.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/amoeba.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -53,11 +53,11 @@ public class PanneauInfoEditeur extends JPanel{
 		this.TableauElement.add(ButtonAmoeba);*/
 
 		
-		ImageIcon boulder = new ImageIcon("./donnees/boulder.gif");
+		ImageIcon boulder = new ImageIcon("./donnees/images/boulder.gif");
 		JLabel ButtonBoulder = new JLabel(boulder);
 		this.pTableauElement.add(ButtonBoulder);
 
-		ImageIcon brickwall = new ImageIcon("./donnees/brickwall.gif");
+		ImageIcon brickwall = new ImageIcon("./donnees/images/brickwall.gif");
 		JLabel ButtonBrickWall = new JLabel(brickwall);
 		this.pTableauElement.add(ButtonBrickWall);
 		
@@ -69,7 +69,7 @@ public class PanneauInfoEditeur extends JPanel{
 		*/
 		
 		try {
-			bigImg = ImageIO.read(new File("./donnees/butterfly.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/butterfly.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -85,7 +85,7 @@ public class PanneauInfoEditeur extends JPanel{
 		*/
 		
 		try {
-			bigImg = ImageIO.read(new File("./donnees/diamond.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/diamond.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -94,7 +94,7 @@ public class PanneauInfoEditeur extends JPanel{
 		this.pTableauElement.add(LabelDiamond);
 		
 		
-		ImageIcon dirt = new ImageIcon("./donnees/dirt.gif");
+		ImageIcon dirt = new ImageIcon("./donnees/images/dirt.gif");
 		JLabel ButtonDirt = new JLabel(dirt);
 		this.pTableauElement.add(ButtonDirt);
 		
@@ -108,7 +108,7 @@ public class PanneauInfoEditeur extends JPanel{
 		*/
 		
 		try {
-			bigImg = ImageIO.read(new File("./donnees/firefly.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/firefly.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -123,7 +123,7 @@ public class PanneauInfoEditeur extends JPanel{
 		*/
 		
 		try {
-			bigImg = ImageIO.read(new File("./donnees/magicwall.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/magicwall.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -138,7 +138,7 @@ public class PanneauInfoEditeur extends JPanel{
 		*/
 		
 		try {
-			bigImg = ImageIO.read(new File("./donnees/rockford.gif"));
+			bigImg = ImageIO.read(new File("./donnees/images/rockford.gif"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
@@ -147,7 +147,7 @@ public class PanneauInfoEditeur extends JPanel{
 		this.pTableauElement.add(LabelRockford);
 		
 		
-		ImageIcon steelwall = new ImageIcon("./donnees/steelwall.gif");
+		ImageIcon steelwall = new ImageIcon("./donnees/images/steelwall.gif");
 		JLabel ButtonSteelWall = new JLabel(steelwall);
 		this.pTableauElement.add(ButtonSteelWall);
 	}
