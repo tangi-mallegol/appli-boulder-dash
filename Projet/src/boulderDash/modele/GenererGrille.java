@@ -62,7 +62,8 @@ public class GenererGrille {
 		}
         
         //Création d'une nouvelle instance de Plateau
-        Plateau plateau = new Plateau();
+        this.x = ListeElements.get(1).split(";").length;
+        Plateau plateau = new Plateau(this.x, this.y);
         //Plateau.addTerre();
         //Plateau.addMurSimple();
         this.y = ListeElements.size();
@@ -72,9 +73,9 @@ public class GenererGrille {
         	this.x = ArrayListString.length;
         	for(String char_ : ArrayListString){
         		switch(char_){
-        		case "0" :
+        		/*case "0" :
         			Plateau.addTerre();
-        			break;
+        			break;*/
         		case "-":
         			Plateau.addMurSimple();
         			break;
