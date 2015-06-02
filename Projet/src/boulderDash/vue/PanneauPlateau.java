@@ -18,11 +18,7 @@ public class PanneauPlateau extends JPanel{
 		
 		setLayout(new GridLayout(plateau.getY(),plateau.getX()));
 		
-		
-		
 		ElementJeu tabElementsJeu[][] = plateau.getTabElementsJeu();
-		
-		
 		
 		for(int i = 0; i < plateau.getY(); i++){
 			for(int j = 0; j < plateau.getX(); j++){
@@ -31,8 +27,7 @@ public class PanneauPlateau extends JPanel{
 				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
 					add(new PanneauMurAcier());
 				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
-					add(new PanneauMurSimple());
-					
+					add(new PanneauMurSimple());					
 			}
 		}
 	}
