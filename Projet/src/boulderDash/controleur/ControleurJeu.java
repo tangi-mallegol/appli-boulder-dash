@@ -1,6 +1,8 @@
 package boulderDash.controleur;
 
-public class ControleurJeu {
+import boulderDash.modele.elementsJeu.MurSimple;
+
+public class ControleurJeu extends Controleur{
 	
 	public ControleurJeu(){
 		

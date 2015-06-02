@@ -1,5 +1,7 @@
 package boulderDash.vue;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 
 public class FenetrePrincipale extends JFrame{
