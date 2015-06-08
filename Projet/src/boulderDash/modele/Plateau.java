@@ -30,6 +30,18 @@ public class Plateau extends Observable{
 	public void addMurSimple(int x, int y){
 		tabElementsJeu[x][y] = new MurSimple();
 	}
+
+	public void addMurMagique(int x, int y){
+		tabElementsJeu[x][y] = new MurSimple();
+	}
+	
+	public void addTerre(int x, int y){
+		tabElementsJeu[x][y] = new MurSimple();
+	}
+	
+	public void addPierre(int x, int y){
+		tabElementsJeu[x][y] = new MurSimple();
+	}
 	
 	public void majPlateau(){
 		notifyObservers(tabElementsJeu);

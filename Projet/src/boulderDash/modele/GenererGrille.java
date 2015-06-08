@@ -80,21 +80,22 @@ public class GenererGrille {
         	this.x = ArrayListString.length;
         	for(String charactère : ArrayListString){
         		switch(charactère){
-        		/*case "0" :
-        			Plateau.addTerre(index_colonne,index_ligne);
-        			break;*/
+        		case "0" :
+        			plateau.addTerre(index_colonne,index_ligne);
+        			break;
         		case "-":
         			plateau.addMurSimple(index_colonne,index_ligne);
         			break;
-        		/*case "+":
-        			Plateau.addPierre(index_colonne,index_ligne);
-        			break;*/
+        		case "+":
+        			plateau.addPierre(index_colonne,index_ligne);
+        			break;
         		}
         		index_colonne ++;
         	}
         	index_colonne = 0;
         	index_ligne ++;
         }
+        plateau.majPlateau();
         return plateau;
 	}
 	
