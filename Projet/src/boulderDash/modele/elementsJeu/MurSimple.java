@@ -9,6 +9,8 @@ import boulderDash.modele.ElementJeu;
 
 public class MurSimple extends ElementJeu{
 	
+	//Traduit en .csv par -
+	
 	public MurSimple(){
 
 	}

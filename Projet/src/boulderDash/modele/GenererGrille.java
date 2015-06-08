@@ -17,14 +17,14 @@ public class GenererGrille {
 	private int x;
 	private int y;
 	private List<String> ListeElements;
-	private int niveau;
+	private String nom;
 	
-	public GenererGrille(int niveau){
+	public GenererGrille(String nom){
 		/* Pour la lecture des .txt, on part du principe que la carte est entouré de steelwall.
 		 * Les steelwall seront representés par des "="
 		 * Pour calculer les tailles, on utilisera donc ces murs
 		 */
-		this.niveau = niveau;
+		this.nom = nom;
 		
 		
 	}
@@ -34,7 +34,7 @@ public class GenererGrille {
 		this.ListeElements = new LinkedList<String>();
 		File file = null;
 		try{
-			file = new File("./donnees/niveaux/" + this.niveau + ".csv");
+			file = new File("./donnees/niveaux/" + this.nom + ".csv");
 		}
 		catch(Exception e){
 			
@@ -62,12 +62,15 @@ public class GenererGrille {
 		}
         
         //Création d'une nouvelle instance de Plateau
+        
+        //Calcul du nombre de case en longueur
         this.x = ListeElements.get(1).split(";").length;
+        
+        //Calcul du nombre de case en hauteur
         this.y = ListeElements.size();
-        System.out.println(this.x + " : " + this.y);
+        
+        //Création du plateau avec en paramètre les dimensions du plateau pour le niveau selectionné
         Plateau plateau = new Plateau(this.x, this.y);
-        //Plateau.addTerre();
-        //Plateau.addMurSimple();
         
         String[] ArrayListString;
         int index_ligne = 0;
@@ -75,16 +78,16 @@ public class GenererGrille {
         for(String line : ListeElements){
         	ArrayListString = line.split(";");
         	this.x = ArrayListString.length;
-        	for(String char_ : ArrayListString){
-        		switch(char_){
+        	for(String charactère : ArrayListString){
+        		switch(charactère){
         		/*case "0" :
-        			Plateau.addTerre();
+        			Plateau.addTerre(index_colonne,index_ligne);
         			break;*/
         		case "-":
         			plateau.addMurSimple(index_colonne,index_ligne);
         			break;
         		/*case "+":
-        			Plateau.addPierre();
+        			Plateau.addPierre(index_colonne,index_ligne);
         			break;*/
         		}
         		index_colonne ++;

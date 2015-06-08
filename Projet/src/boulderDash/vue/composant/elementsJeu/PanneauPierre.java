@@ -11,15 +11,17 @@ import javax.swing.JLabel;
 
 import boulderDash.vue.PanneauElementJeu;
 
-public class PanneauMurAcier extends PanneauElementJeu implements Observer{
-	public PanneauMurAcier(){
+public class PanneauPierre extends PanneauElementJeu implements Observer{
+	
+	public PanneauPierre(){
 		JLabel imageLabel = new JLabel();
 
 		ImageIcon ii;
 		try {
-			ii = new ImageIcon(ImageIO.read(new File("./donnees/images/steelwall.gif")));
+			ii = new ImageIcon(ImageIO.read(new File("./donnees/images/boulder.gif")));
 			imageLabel.setIcon(ii);
 	        imageLabel.setBounds(20,20,ii.getIconWidth(),ii.getIconHeight());
+
 	        add(imageLabel);
 		} catch (IOException e) {
 			e.printStackTrace();
