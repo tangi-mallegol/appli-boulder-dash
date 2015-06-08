@@ -17,7 +17,7 @@ public class PanneauMurAcier extends PanneauElementJeu implements Observer{
 
 		ImageIcon ii;
 		try {
-			ii = new ImageIcon(ImageIO.read(new File("./donnees/steelwall.gif")));
+			ii = new ImageIcon(ImageIO.read(new File("./donnees/images/steelwall.gif")));
 			imageLabel.setIcon(ii);
 	        imageLabel.setBounds(20,20,ii.getIconWidth(),ii.getIconHeight());
 

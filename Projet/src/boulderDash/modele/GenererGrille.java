@@ -37,14 +37,14 @@ public class GenererGrille {
 			file = new File("./donnees/niveaux/" + this.niveau + ".csv");
 		}
 		catch(Exception e){
-			return;
+			
 		}
 		FileReader fr = null;
 		try {
 			fr = new FileReader(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return;
+			
 		}
         BufferedReader br = new BufferedReader(fr);
         int i = 0;
@@ -63,11 +63,15 @@ public class GenererGrille {
         
         //Création d'une nouvelle instance de Plateau
         this.x = ListeElements.get(1).split(";").length;
+        this.y = ListeElements.size();
+        System.out.println(this.x + " : " + this.y);
         Plateau plateau = new Plateau(this.x, this.y);
         //Plateau.addTerre();
         //Plateau.addMurSimple();
-        this.y = ListeElements.size();
+        
         String[] ArrayListString;
+        int index_ligne = 0;
+        int index_colonne = 0;
         for(String line : ListeElements){
         	ArrayListString = line.split(";");
         	this.x = ArrayListString.length;
@@ -77,15 +81,18 @@ public class GenererGrille {
         			Plateau.addTerre();
         			break;*/
         		case "-":
-        			Plateau.addMurSimple();
+        			plateau.addMurSimple(index_colonne,index_ligne);
         			break;
         		/*case "+":
         			Plateau.addPierre();
         			break;*/
         		}
+        		index_colonne ++;
         	}
+        	index_colonne = 0;
+        	index_ligne ++;
         }
-        return Plateau;
+        return plateau;
 	}
 	
 	public int getX(){
@@ -95,13 +102,13 @@ public class GenererGrille {
 	public int getY(){
 		return this.y;
 	}
-	public static void main(String[] args){
+	/*public static void main(String[] args){
 		GenererGrille grille = new GenererGrille(1);
 		try {
-			grille.CreerPlateau();
+			grille.creerPlateau();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 }

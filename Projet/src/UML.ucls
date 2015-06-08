@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="boulderDash.vue.composant.MenuJeu.EcouteurMenuJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/MenuJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="191" x="2388" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="boulderDash.vue.FenetrePrincipale" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="125" x="2076" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="boulderDash.controleur.ControleurJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/controleur/ControleurJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="106" x="1575" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="boulderDash.vue.FenetreEditeur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/FenetreEditeur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="191" x="1960" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="boulderDash.modele.GenererGrille" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/GenererGrille.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="205" width="154" x="390" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="boulderDash.modele.elementsJeu.MurSimple" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/elementsJeu/MurSimple.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="151" x="678" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="boulderDash.vue.FenetreAccueil.Ecouteur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/FenetreAccueil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="191" x="2619" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="boulderDash.vue.PanneauElementJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/PanneauElementJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="142" x="1279" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="boulderDash.vue.composant.MenuEditeur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/MenuEditeur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="167" x="1845" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="boulderDash.vue.FenetreJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/FenetreJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="157" x="2191" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="boulderDash.vue.composant.elementsJeu.PanneauVide" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/elementsJeu/PanneauVide.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="185" x="1504" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="boulderDash.controleur.Controleur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/controleur/Controleur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="106" x="908" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="boulderDash.controleur.ControleurEditeur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/controleur/ControleurEditeur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="126" x="1409" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="boulderDash.vue.composant.elementsJeu.PanneauMurAcier" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/elementsJeu/PanneauMurAcier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="185" x="1054" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="boulderDash.vue.composant.MenuEditeur.EcouteurMenuEditeur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/MenuEditeur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="191" x="1729" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="boulderDash.controleur.Traitement" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/controleur/Traitement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="106" x="894" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="boulderDash.controleur.ControleurAccueil" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/controleur/ControleurAccueil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="128" x="2850" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="boulderDash.vue.PanneauInfoEditeur" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/PanneauInfoEditeur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="147" x="1960" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="boulderDash.vue.composant.MenuJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/MenuJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="133" x="2289" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="boulderDash.vue.FenetreAccueil" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/FenetreAccueil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="189" x="2619" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="boulderDash.modele.Plateau" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/Plateau.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="187" width="199" x="1040" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="boulderDash.modele.elementsJeu.MurAcier" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/elementsJeu/MurAcier.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="151" x="869" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="boulderDash.vue.PanneauInfoJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/PanneauInfoJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="116" x="43" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="boulderDash.vue.composant.elementsJeu.PanneauMurSimple" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/composant/elementsJeu/PanneauMurSimple.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="185" x="1279" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="boulderDash.vue.PanneauPlateau" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/vue/PanneauPlateau.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="117" x="584" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="boulderDash.modele.ElementJeu" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/ElementJeu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="95" x="773" y="282"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="boulderDash.BoulderDash" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/BoulderDash.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="113" x="741" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="boulderDash.modele.elementsJeu.Personnage" project="Boulder-Dash" 
+    file="/Boulder-Dash/src/boulderDash/modele/elementsJeu/Personnage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="151" x="199" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="30">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="31" name="controleurJeu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="33">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="15"/>  
+  </nesting>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="35">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="36" name="fEditeur">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="37" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="39" name="menuAccueil">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <nesting id="42">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="1"/>  
+  </nesting>  
+  <association id="43">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="44" name="controleurMenu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="47">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="48" name="controleurEditeur">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="51" name="pInfoEditeur">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="53">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <association id="54">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="55" name="fJeu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="60">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="61" name="tabElementsJeu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -1,10 +1,12 @@
 package boulderDash.vue;
 
 import java.awt.GridLayout;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 
 import boulderDash.modele.ElementJeu;
+import boulderDash.modele.GenererGrille;
 import boulderDash.modele.Plateau;
 import boulderDash.vue.composant.elementsJeu.PanneauMurAcier;
 import boulderDash.vue.composant.elementsJeu.PanneauMurSimple;
@@ -14,21 +16,28 @@ public class PanneauPlateau extends JPanel{
 	public PanneauPlateau(){
 		GenererGrille genererGrille = new GenererGrille(1);
 		
-		Plateau plateau = genererGrille.creerPlateau();
+		Plateau plateau;
+		try {
+			plateau = genererGrille.creerPlateau();
 		
-		setLayout(new GridLayout(plateau.getY(),plateau.getX()));
-		
-		ElementJeu tabElementsJeu[][] = plateau.getTabElementsJeu();
-		
-		for(int i = 0; i < plateau.getY(); i++){
-			for(int j = 0; j < plateau.getX(); j++){
-				if(tabElementsJeu[j][i] == null)
-					add(new PanneauVide());
-				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
-					add(new PanneauMurAcier());
-				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
-					add(new PanneauMurSimple());					
+			
+			setLayout(new GridLayout(plateau.getY(),plateau.getX()));
+			
+			ElementJeu tabElementsJeu[][] = plateau.getTabElementsJeu();
+			
+			for(int i = 0; i < plateau.getY(); i++){
+				for(int j = 0; j < plateau.getX(); j++){
+					if(tabElementsJeu[j][i] == null)
+						add(new PanneauVide());
+					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
+						add(new PanneauMurAcier());
+					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
+						add(new PanneauMurSimple());					
+				}
 			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

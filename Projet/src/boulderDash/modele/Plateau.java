@@ -13,17 +13,16 @@ public class Plateau {
 		
 		tabElementsJeu = new ElementJeu[x][y];
 		
-		for(int i=0; i<tabElementsJeu[0].length; i++)
+		for(int i=0; i<x; i++)
+			tabElementsJeu[i][0] = new MurAcier();		
+		for(int i=0; i<y; i++)
 				tabElementsJeu[0][i] = new MurAcier();
 		
-		for(int i=0; i<tabElementsJeu.length; i++)
-			tabElementsJeu[i][0] = new MurAcier();
+		for(int i=x-1; i>0; i--)
+			tabElementsJeu[i][y-1] = new MurAcier();
 		
-		/*for(int i=tabElementsJeu[0].length; i>1; i--)
-			tabElementsJeu[0][i] = new MurAcier();
-		
-		for(int i=tabElementsJeu.length; i>1; i--)
-			tabElementsJeu[i][0] = new MurAcier();*/
+		for(int i=y-1; i>0; i--)
+			tabElementsJeu[x-1][i] = new MurAcier();
 	}
 
 	public void addMurSimple(int x, int y){
