@@ -14,7 +14,7 @@ import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class PanneauPlateau extends JPanel{
 	public PanneauPlateau(){
-		GenererGrille genererGrille = new GenererGrille(1);
+		GenererGrille genererGrille = new GenererGrille("1");
 		
 		Plateau plateau;
 		try {
