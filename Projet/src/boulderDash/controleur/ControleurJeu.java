@@ -21,29 +21,26 @@ public class ControleurJeu extends Controleur{
 	}
 	
 	public void initNiveau(String nomNiveau, FenetreJeu fj){
-		GenererGrille genererGrille = new GenererGrille(1);
+		GenererGrille genererGrille = new GenererGrille("1");
 		
 		Plateau plateau;
-		plateau.addObserver(fj);
 		try {
-			plateau = genererGrille.creerPlateau();		
+			plateau = genererGrille.creerPlateau();
+			plateau.addObserver(fj);
 			
-			ElementJeu tabElementsJeu[][] = plateau.getTabElementsJeu();
 			
-			/*for(int i = 0; i < plateau.getY(); i++){
-				for(int j = 0; j < plateau.getX(); j++){
-					if(tabElementsJeu[j][i] == null)
-						add(new PanneauVide());
-					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
-						add(new PanneauMurAcier());
-					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
-						add(new PanneauMurSimple());					
-				}
-			}*/
-		} catch (IOException e) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+			e1.printStackTrace();
+		}
+		
+		
+					
+			
+			
+			
+			
+		
 	}
 	
 }

@@ -24,13 +24,15 @@ public class Plateau extends Observable{
 			tabElementsJeu[i][y-1] = new MurAcier();
 		
 		for(int i=y-1; i>0; i--)
-			tabElementsJeu[x-1][i] = new MurAcier();
-		
-		notifyObservers("Creation");
+			tabElementsJeu[x-1][i] = new MurAcier();		
 	}
 
 	public void addMurSimple(int x, int y){
 		tabElementsJeu[x][y] = new MurSimple();
+	}
+	
+	public void majPlateau(){
+		notifyObservers(tabElementsJeu);
 	}
 	
 	public ElementJeu[][] getTabElementsJeu() {
