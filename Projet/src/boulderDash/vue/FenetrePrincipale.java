@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-public class FenetrePrincipale extends JFrame{
+public abstract class FenetrePrincipale extends JFrame{
 	public FenetrePrincipale(){
 		setTitle("Boulder Dash");
 		setSize(1000, 500);

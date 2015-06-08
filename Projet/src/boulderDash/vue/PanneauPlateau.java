@@ -1,9 +1,13 @@
 package boulderDash.vue;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Window;
 import java.io.IOException;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import boulderDash.modele.ElementJeu;
 import boulderDash.modele.GenererGrille;
@@ -13,31 +17,16 @@ import boulderDash.vue.composant.elementsJeu.PanneauMurSimple;
 import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class PanneauPlateau extends JPanel{
-	public PanneauPlateau(){
-		GenererGrille genererGrille = new GenererGrille(1);
-		
-		Plateau plateau;
-		try {
-			plateau = genererGrille.creerPlateau();
-		
-			
-			setLayout(new GridLayout(plateau.getY(),plateau.getX()));
-			
-			ElementJeu tabElementsJeu[][] = plateau.getTabElementsJeu();
-			
-			for(int i = 0; i < plateau.getY(); i++){
-				for(int j = 0; j < plateau.getX(); j++){
-					if(tabElementsJeu[j][i] == null)
-						add(new PanneauVide());
-					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
-						add(new PanneauMurAcier());
-					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
-						add(new PanneauMurSimple());					
-				}
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public PanneauPlateau(int x, int y){
+		Window window = SwingUtilities.windowForComponent(this);
+		if (window instanceof JFrame) {
+			JFrame frame = (JFrame) window;
+	 
+			frame.setSize(new Dimension(16*x+150, 16*y));
 		}
+		
+		setLayout(new GridLayout(y,x));
+		
+		
 	}
 }

@@ -1,9 +1,11 @@
 package boulderDash.modele;
 
+import java.util.Observable;
+
 import boulderDash.modele.elementsJeu.MurAcier;
 import boulderDash.modele.elementsJeu.MurSimple;
 
-public class Plateau {
+public class Plateau extends Observable{
 	ElementJeu tabElementsJeu[][];
 	private int x, y;
 
@@ -23,6 +25,8 @@ public class Plateau {
 		
 		for(int i=y-1; i>0; i--)
 			tabElementsJeu[x-1][i] = new MurAcier();
+		
+		notifyObservers("Creation");
 	}
 
 	public void addMurSimple(int x, int y){

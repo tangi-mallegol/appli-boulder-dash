@@ -8,12 +8,15 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import boulderDash.controleur.ControleurAccueil;
+import boulderDash.controleur.ControleurJeu;
 import boulderDash.vue.FenetreAccueil;
 import boulderDash.vue.FenetreJeu;
 
 public class MenuJeu extends JMenuBar{
 	private FenetreJeu fJeu;
-	public MenuJeu(FenetreJeu fJeu){
+	private ControleurJeu controleurJeu;
+	
+	public MenuJeu(FenetreJeu fJeu, ControleurJeu controleurJeu){
 		this.fJeu = fJeu;
 		
 		JMenu menu = new JMenu("Menu");
@@ -49,6 +52,10 @@ public class MenuJeu extends JMenuBar{
 			if(e.getActionCommand().equals("Accueil")){
 				fJeu.dispose();
 				new FenetreAccueil(new ControleurAccueil());
+			}
+			
+			if(e.getActionCommand().equals("Charger une partie")){
+				controleurJeu.initNiveau("1", fJeu);
 			}
 		}		
 	}
