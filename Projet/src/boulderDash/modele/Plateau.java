@@ -3,7 +3,10 @@ package boulderDash.modele;
 import java.util.Observable;
 
 import boulderDash.modele.elementsJeu.MurAcier;
+import boulderDash.modele.elementsJeu.MurMagique;
 import boulderDash.modele.elementsJeu.MurSimple;
+import boulderDash.modele.elementsJeu.Pierre;
+import boulderDash.modele.elementsJeu.Terre;
 
 public class Plateau extends Observable{
 	ElementJeu tabElementsJeu[][];
@@ -32,15 +35,15 @@ public class Plateau extends Observable{
 	}
 
 	public void addMurMagique(int x, int y){
-		tabElementsJeu[x][y] = new MurSimple();
+		tabElementsJeu[x][y] = new MurMagique();
 	}
 	
 	public void addTerre(int x, int y){
-		tabElementsJeu[x][y] = new MurSimple();
+		tabElementsJeu[x][y] = new Terre();
 	}
 	
 	public void addPierre(int x, int y){
-		tabElementsJeu[x][y] = new MurSimple();
+		tabElementsJeu[x][y] = new Pierre();
 	}
 	
 	public void majPlateau(){
