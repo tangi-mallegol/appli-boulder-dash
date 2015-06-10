@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import boulderDash.vue.FenetreJeu;
+
 public class GenererGrille {
 	
 	private int x;
@@ -29,7 +31,7 @@ public class GenererGrille {
 		
 	}
 	
-	public Plateau creerPlateau() throws IOException{
+	public Plateau creerPlateau(FenetreJeu fj) throws IOException{
 		//Recupération des fichiers
 		this.ListeElements = new LinkedList<String>();
 		File file = null;
@@ -51,7 +53,7 @@ public class GenererGrille {
         for (String line = br.readLine(); line != null; line = br.readLine()) {
             //On ajoute les lignes
         	ListeElements.add(line);
-        	System.out.println(line + "\n");
+        	//System.out.println(line + "\n");
         }
 
         try {
@@ -71,6 +73,7 @@ public class GenererGrille {
         
         //Création du plateau avec en paramètre les dimensions du plateau pour le niveau selectionné
         Plateau plateau = new Plateau(this.x, this.y);
+        plateau.addObserver(fj);
         
         String[] ArrayListString;
         int index_ligne = 0;

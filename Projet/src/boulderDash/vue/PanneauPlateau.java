@@ -20,16 +20,7 @@ import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class PanneauPlateau extends JPanel{
 	public PanneauPlateau(int x, int y){
-		Window window = SwingUtilities.windowForComponent(this);
-		if (window instanceof JFrame) {
-			JFrame frame = (JFrame) window;
-	 
-			frame.setSize(new Dimension(16*x+150, 16*y));
-		}
-		
-		
 		setLayout(new GridLayout(y,x));
-		
-		
+		setSize(new Dimension(16*x, 16*y));
 	}
 }

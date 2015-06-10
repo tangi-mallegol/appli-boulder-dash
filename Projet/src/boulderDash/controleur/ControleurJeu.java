@@ -21,12 +21,11 @@ public class ControleurJeu extends Controleur{
 	}
 	
 	public void initNiveau(String nomNiveau, FenetreJeu fj){
-		GenererGrille genererGrille = new GenererGrille("1");
+		GenererGrille genererGrille = new GenererGrille(nomNiveau);
 		
 		Plateau plateau;
 		try {
-			plateau = genererGrille.creerPlateau();
-			plateau.addObserver(fj);
+			plateau = genererGrille.creerPlateau(fj);
 			
 			
 		} catch (IOException e1) {

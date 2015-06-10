@@ -44,7 +44,9 @@ public class Plateau extends Observable{
 	}
 	
 	public void majPlateau(){
+		setChanged();
 		notifyObservers(tabElementsJeu);
+		System.out.println("ON EST DANS MAJ");
 	}
 	
 	public ElementJeu[][] getTabElementsJeu() {

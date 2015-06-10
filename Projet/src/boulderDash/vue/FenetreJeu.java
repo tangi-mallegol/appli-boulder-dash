@@ -19,9 +19,7 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 	
 	public FenetreJeu(ControleurJeu controleurJeu){
 		super();
-		this.controleurJeu = controleurJeu;
-		
-		
+		this.controleurJeu = controleurJeu;		
 		
 		MenuJeu menuJeu = new MenuJeu(this, controleurJeu);
 		
@@ -30,6 +28,7 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
+		System.out.println("ON EST DANS UPDATE");
 		ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
 		
 		PanneauPlateau pPlateau = new PanneauPlateau(tabElementsJeu.length, tabElementsJeu[0].length);
@@ -44,8 +43,10 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 					pPlateau.add(new PanneauMurSimple());					
 			}
 		}
-		
 		add(pPlateau, BorderLayout.CENTER);
+		this.pack();		
+		this.repaint();
+		this.setVisible(true);
 		
 	}
 }
