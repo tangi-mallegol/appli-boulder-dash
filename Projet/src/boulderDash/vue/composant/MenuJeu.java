@@ -53,6 +53,7 @@ public class MenuJeu extends JMenuBar{
 		menu.add(charger);
 		menu.add(accueil);
 		menu.add(aide);
+		menu.addSeparator();
 		menu.add(quitter);
 		
 		add(menu);
@@ -66,6 +67,8 @@ public class MenuJeu extends JMenuBar{
 				if(e.getSource() == niveaux[i])
 					controleurJeu.initNiveau(i.toString(), fJeu);*/
 			
+			if(e.getActionCommand().equals("1"))
+				controleurJeu.initNiveau("1", fJeu);
 			
 			if(e.getActionCommand().equals("Quitter"))
 				fJeu.dispose();

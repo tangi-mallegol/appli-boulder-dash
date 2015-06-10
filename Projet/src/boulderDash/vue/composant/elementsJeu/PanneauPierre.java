@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 import boulderDash.vue.PanneauElementJeu;
 
-public class PanneauPierre extends PanneauElementJeu implements Observer{
+public class PanneauPierre extends PanneauElementJeu{
 	
 	public PanneauPierre(){
 		JLabel imageLabel = new JLabel();
@@ -20,18 +20,11 @@ public class PanneauPierre extends PanneauElementJeu implements Observer{
 		try {
 			ii = new ImageIcon(ImageIO.read(new File("./donnees/images/boulder.gif")));
 			imageLabel.setIcon(ii);
-	        imageLabel.setBounds(20,20,ii.getIconWidth(),ii.getIconHeight());
+	        imageLabel.setBounds(16,16,ii.getIconWidth(),ii.getIconHeight());
 
 	        add(imageLabel);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        
-	}
-
-	@Override
-	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		
 	}
 }

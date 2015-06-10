@@ -20,7 +20,7 @@ public class PanneauTerre extends PanneauElementJeu implements Observer{
 		try {
 			ii = new ImageIcon(ImageIO.read(new File("./donnees/images/dirt.gif")));
 			imageLabel.setIcon(ii);
-	        imageLabel.setBounds(20,20,ii.getIconWidth(),ii.getIconHeight());
+	        imageLabel.setBounds(16,16,ii.getIconWidth(),ii.getIconHeight());
 
 	        add(imageLabel);
 		} catch (IOException e) {

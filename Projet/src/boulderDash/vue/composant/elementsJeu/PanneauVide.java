@@ -6,5 +6,4 @@ public class PanneauVide extends PanneauElementJeu{
 	public PanneauVide(){
 		
 	}
-
 }

@@ -2,6 +2,8 @@ package boulderDash.modele.elementsJeu;
 
 import java.awt.Rectangle;
 
-public class Personnage extends Rectangle{
+import boulderDash.modele.ElementJeu;
+
+public class Personnage extends ElementJeu{
 	
 }

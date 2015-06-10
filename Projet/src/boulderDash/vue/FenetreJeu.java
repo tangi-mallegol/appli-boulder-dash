@@ -9,9 +9,7 @@ import javax.swing.JLabel;
 import boulderDash.controleur.ControleurJeu;
 import boulderDash.modele.ElementJeu;
 import boulderDash.vue.composant.MenuJeu;
-import boulderDash.vue.composant.elementsJeu.PanneauMurAcier;
-import boulderDash.vue.composant.elementsJeu.PanneauMurSimple;
-import boulderDash.vue.composant.elementsJeu.PanneauVide;
+import boulderDash.vue.composant.elementsJeu.*;
 
 public class FenetreJeu extends FenetrePrincipale implements Observer{
 	private ControleurJeu controleurJeu;
@@ -19,16 +17,17 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 	
 	public FenetreJeu(ControleurJeu controleurJeu){
 		super();
-		this.controleurJeu = controleurJeu;		
+		this.controleurJeu = controleurJeu;	
+		
+		PanneauInfoJeu pInfoJeu = new PanneauInfoJeu();
+		add(pInfoJeu, BorderLayout.EAST);
 		
 		MenuJeu menuJeu = new MenuJeu(this, controleurJeu);
-		
 		setJMenuBar(menuJeu);
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		System.out.println("ON EST DANS UPDATE");
 		ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
 		
 		PanneauPlateau pPlateau = new PanneauPlateau(tabElementsJeu.length, tabElementsJeu[0].length);
@@ -40,13 +39,18 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
 					pPlateau.add(new PanneauMurAcier());
 				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
-					pPlateau.add(new PanneauMurSimple());					
+					pPlateau.add(new PanneauMurSimple());
+				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurMagique"))
+					pPlateau.add(new PanneauMurMagique());					
+				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Terre"))
+					pPlateau.add(new PanneauTerre());
+				else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Personnage"))
+					pPlateau.add(new PanneauPersonnage());
 			}
 		}
 		add(pPlateau, BorderLayout.CENTER);
 		this.pack();		
 		this.repaint();
 		this.setVisible(true);
-		
 	}
 }

@@ -89,6 +89,9 @@ public class GenererGrille {
         		case "-":
         			plateau.addMurSimple(index_colonne,index_ligne);
         			break;
+        		case "R":
+        			plateau.addPersonnage(index_colonne,index_ligne);
+        			break;
         		case "+":
         			plateau.addPierre(index_colonne,index_ligne);
         			break;

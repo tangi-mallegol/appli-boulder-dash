@@ -8,7 +8,7 @@ public abstract class FenetrePrincipale extends JFrame{
 	public FenetrePrincipale(){
 		setTitle("Boulder Dash");
 		setSize(1000, 500);
-		setResizable(true);
+		setResizable(false);
 		setLocationRelativeTo(null);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
