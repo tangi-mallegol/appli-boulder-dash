@@ -81,8 +81,8 @@ public class GenererGrille {
         for(String line : ListeElements){
         	ArrayListString = line.split(";");
         	this.x = ArrayListString.length;
-        	for(String charactère : ArrayListString){
-        		switch(charactère){
+        	for(String charactere : ArrayListString){
+        		switch(charactere){
         		case "0" :
         			plateau.addTerre(index_colonne,index_ligne);
         			break;
