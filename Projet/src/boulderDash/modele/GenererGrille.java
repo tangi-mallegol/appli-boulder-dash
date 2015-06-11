@@ -27,8 +27,6 @@ public class GenererGrille {
 		 * Pour calculer les tailles, on utilisera donc ces murs
 		 */
 		this.nom = nom;
-		
-		
 	}
 	
 	public Plateau creerPlateau(FenetreJeu fj) throws IOException{
@@ -101,7 +99,7 @@ public class GenererGrille {
         	index_colonne = 0;
         	index_ligne ++;
         }
-        plateau.majPlateau();
+        plateau.initPanneauPlateau();
         return plateau;
 	}
 	

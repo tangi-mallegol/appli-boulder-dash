@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 import boulderDash.modele.ElementJeu;
 
-public class MurSimple extends ElementJeu{
+public class MurSimple implements ElementJeu{
 	
 	//Traduit en .csv par -
 	

@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import boulderDash.vue.PanneauElementJeu;
 
 public class PanneauPersonnage extends PanneauElementJeu implements Observer{
+	
 	public PanneauPersonnage(){
 		JLabel imageLabel = new JLabel();
 
@@ -32,6 +33,4 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 	public void update(Observable arg0, Object arg1) {
 		
 	}
-	
 }
-	

@@ -5,8 +5,9 @@ import java.util.Observable;
 import boulderDash.modele.elementsJeu.*;
 
 public class Plateau extends Observable{
-	ElementJeu tabElementsJeu[][];
+	private ElementJeu tabElementsJeu[][];
 	private int x, y;
+	private Personnage personnage;
 
 	public Plateau(int x, int y){
 		this.x = x;
@@ -43,24 +44,20 @@ public class Plateau extends Observable{
 	}
 	
 	public void addPersonnage(int x, int y){
-		tabElementsJeu[x][y] = new Personnage();
+		personnage = new Personnage(x, y);
+		tabElementsJeu[x][y] = personnage;
 	}
 	
-	public void majPlateau(){
+	public void initPanneauPlateau(){
 		setChanged();
 		notifyObservers(tabElementsJeu);
-		System.out.println("ON EST DANS MAJ");
 	}
 	
 	public ElementJeu[][] getTabElementsJeu() {
 		return tabElementsJeu;
 	}
-	
-	public int getX() {
-		return x;
-	}
 
-	public int getY() {
-		return y;
+	public Personnage getPersonnage() {
+		return personnage;
 	}
 }
