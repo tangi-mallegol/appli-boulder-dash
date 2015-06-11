@@ -26,7 +26,6 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        
 	}
 
 	@Override
