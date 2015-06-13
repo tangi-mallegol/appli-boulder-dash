@@ -2,24 +2,9 @@ package boulderDash.vue;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Window;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-
-import boulderDash.modele.ElementJeu;
-import boulderDash.modele.GenererGrille;
-import boulderDash.modele.Plateau;
-import boulderDash.vue.composant.elementsJeu.PanneauMurAcier;
-import boulderDash.vue.composant.elementsJeu.PanneauMurSimple;
-import boulderDash.vue.composant.elementsJeu.PanneauPersonnage;
-import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class PanneauPlateau extends JPanel implements Observer{
 	private PanneauElementJeu[][] tabPanneauxElementsJeu;
