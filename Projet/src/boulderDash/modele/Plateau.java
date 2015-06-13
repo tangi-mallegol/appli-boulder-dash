@@ -44,7 +44,7 @@ public class Plateau extends Observable{
 	}
 	
 	public void addPersonnage(int x, int y){
-		personnage = new Personnage(x, y);
+		personnage = new Personnage(x, y, this);
 		tabElementsJeu[x][y] = personnage;
 	}
 	

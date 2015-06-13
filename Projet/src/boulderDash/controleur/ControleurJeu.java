@@ -33,18 +33,18 @@ public class ControleurJeu extends Controleur{
 	}
 	
 	public void moveUP(){		
-		plateau.getPersonnage().setLocation(plateau.getPersonnage().getX(), plateau.getPersonnage().getY()-1);
+		plateau.getPersonnage().moveUP();
 	}
 	
 	public void moveDOWN(){
-		plateau.getPersonnage().setLocation(plateau.getPersonnage().getX(), plateau.getPersonnage().getY()+1);
+		plateau.getPersonnage().moveDOWN();
 	}
 	
 	public void moveLEFT(){
-		plateau.getPersonnage().setLocation(plateau.getPersonnage().getX()-1, plateau.getPersonnage().getY());
+		plateau.getPersonnage().moveLEFT();
 	}
 	
 	public void moveRIGHT(){
-		plateau.getPersonnage().setLocation(plateau.getPersonnage().getX()+1, plateau.getPersonnage().getY());
+		plateau.getPersonnage().moveRIGHT();
 	}
 }

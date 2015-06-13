@@ -50,6 +50,8 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 						pPlateau.addPanneauElementJeu(new PanneauMurMagique(), j, i);
 					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Terre"))
 						pPlateau.addPanneauElementJeu(new PanneauTerre(), j, i);
+					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre"))
+						pPlateau.addPanneauElementJeu(new PanneauPierre(), j, i);
 					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Personnage"))
 						pPlateau.addPanneauElementJeu(new PanneauPersonnage(), j, i);
 				}

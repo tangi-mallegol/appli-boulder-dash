@@ -9,6 +9,6 @@ import javax.swing.JPanel;
 public class PanneauElementJeu extends JPanel{
 	public PanneauElementJeu(){
 		setLayout(new GridLayout(1,1));
-		setBackground(Color.BLUE);
+		setBackground(Color.BLACK);
 	}
 }

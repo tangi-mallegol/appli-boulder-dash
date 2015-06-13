@@ -73,24 +73,27 @@ public class GenererGrille {
         Plateau plateau = new Plateau(this.x, this.y);
         plateau.addObserver(fj);
         
-        String[] ArrayListString;
+        String[] tabCaractereString;
         int index_ligne = 0;
         int index_colonne = 0;
         for(String line : ListeElements){
-        	ArrayListString = line.split(";");
-        	this.x = ArrayListString.length;
-        	for(String charactere : ArrayListString){
-        		switch(charactere){
-        		case "0" :
+        	tabCaractereString = line.split(";");
+        	this.x = tabCaractereString .length;
+        	
+        	for(String sCaractere : tabCaractereString){
+        		
+        		char caractere = sCaractere.charAt(0);
+        		switch(caractere){
+        		case '0' :
         			plateau.addTerre(index_colonne,index_ligne);
         			break;
-        		case "-":
+        		case '-':
         			plateau.addMurSimple(index_colonne,index_ligne);
         			break;
-        		case "R":
+        		case 'R':
         			plateau.addPersonnage(index_colonne,index_ligne);
         			break;
-        		case "+":
+        		case '+':
         			plateau.addPierre(index_colonne,index_ligne);
         			break;
         		}
