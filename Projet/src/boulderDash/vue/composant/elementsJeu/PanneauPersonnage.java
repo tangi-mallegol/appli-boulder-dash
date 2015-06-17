@@ -40,8 +40,6 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 				TableauImage[i][j] = new JLabel();
 				TableauImage[i][j].setIcon(new ImageIcon(ii.getSubimage(7 + 16*j +8*j,7 + 16*i + 8*i ,16,16)));
 				TableauImage[i][j].setBounds(0, 0, 16, 16);
-				if(TableauImage[i][j] == null)
-					System.out.println("null");
 			}
 		}
 		add(TableauImage[0][0]);
@@ -59,14 +57,10 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		timer.schedule(new TimerTask(){
 			int i = 0;
 			public void run(){
-				System.out.println("["+i + ":" + i + "]");
-				Component c = null;
-				
-				remove(c);
-				remove(TableauImage[i%6][i%8]);
+				remove(TableauImage[1][i%8]);
 				i++;
-				System.out.println("["+i%6 + ":" + i%8 + "]");
-				add(TableauImage[i%6][i%8]);
+				System.out.println("["+ i%6 + ":" + 0 + "]");
+				add(TableauImage[1][i%8]);
 				repaint();
 			}
 		}, 500,500);
