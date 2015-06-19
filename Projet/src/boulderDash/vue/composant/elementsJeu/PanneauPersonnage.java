@@ -42,7 +42,7 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 				TableauImage[i][j].setBounds(0, 0, 16, 16);
 			}
 		}
-		add(TableauImage[0][0]);
+		//add(TableauImage[0][0]);
 		Move();
 	}
 
@@ -53,16 +53,57 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 	}
 	
 	public void Move(){
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask(){
-			int i = 0;
-			public void run(){
-				remove(TableauImage[1][i%8]);
+		Sprite sprite = new Sprite(this);
+		sprite.start();
+	}
+	
+	public class Sprite extends Thread{
+		
+		private int i;
+		private PanneauPersonnage p;
+		
+		public Sprite(PanneauPersonnage p){
+			i = 0;
+			this.p = p;
+		}
+		
+		public void run(){
+			try {
+				sleep(500);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			while(true){
+				p.remove(TableauImage[4][i%8]);
 				i++;
 				//System.out.println("["+ i%6 + ":" + 0 + "]");
-				add(TableauImage[1][i%8]);
-				repaint();
+				p.add(TableauImage[4][i%8]);
+				p.repaint();
+				try {
+					sleep(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-		}, 500,500);
+		}
+		
+		public void left(){
+			
+		}
+		
+		public void right(){
+			
+		}
+		
+		public void haut(){
+			
+		}
+		
+		public void bas(){
+			
+		}
+		
 	}
 }
