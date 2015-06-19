@@ -55,7 +55,7 @@ public class PanneauMurMagique extends PanneauElementJeu implements Observer{
 				add(TableauImage[i%4]);
 				repaint();
 			}
-		}, 500,500);
+		}, 500,50);
 	}
 
 	public JLabel[] getTableauImage() {
