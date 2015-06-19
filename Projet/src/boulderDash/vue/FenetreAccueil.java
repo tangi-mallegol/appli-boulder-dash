@@ -19,7 +19,7 @@ public class FenetreAccueil extends JFrame{
 	private JButton bJeu;
 	private ControleurAccueil controleurMenu;
 	
-	public FenetreAccueil(ControleurAccueil ControllerMenu){
+	public FenetreAccueil(ControleurAccueil controleurMenu){
 		setTitle("Boulder Dash");
 		setSize(350, 125);
 		setResizable(true);
@@ -27,7 +27,7 @@ public class FenetreAccueil extends JFrame{
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		controleurMenu = new ControleurAccueil();
+		this.controleurMenu = controleurMenu;
 		
 		Ecouteur ecouteur = new Ecouteur(this);
 		

@@ -15,7 +15,7 @@ public class FenetreEditeur extends FenetrePrincipale{
 		pInfoEditeur = new PanneauInfoEditeur();
 		add(pInfoEditeur, BorderLayout.EAST);
 		
-		MenuEditeur menuEditeur = new MenuEditeur(this);
+		MenuEditeur menuEditeur = new MenuEditeur(this, controleurEditeur);
 		setJMenuBar(menuEditeur);
 	}
 }

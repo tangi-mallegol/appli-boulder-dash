@@ -59,7 +59,7 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 			public void run(){
 				remove(TableauImage[1][i%8]);
 				i++;
-				System.out.println("["+ i%6 + ":" + 0 + "]");
+				//System.out.println("["+ i%6 + ":" + 0 + "]");
 				add(TableauImage[1][i%8]);
 				repaint();
 			}

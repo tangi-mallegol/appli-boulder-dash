@@ -8,14 +8,17 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import boulderDash.controleur.ControleurAccueil;
+import boulderDash.controleur.ControleurEditeur;
 import boulderDash.vue.FenetreAccueil;
 import boulderDash.vue.FenetreEditeur;
 
 public class MenuEditeur extends JMenuBar{
 	private FenetreEditeur fEditeur;
+	private ControleurEditeur controleurEditeur;
 	
-	public MenuEditeur(FenetreEditeur fEditeur){
+	public MenuEditeur(FenetreEditeur fEditeur, ControleurEditeur controleurEditeur){
 		this.fEditeur = fEditeur;
+		this.controleurEditeur = controleurEditeur;
 		
 		JMenu menu = new JMenu("Menu");
 		
@@ -36,6 +39,7 @@ public class MenuEditeur extends JMenuBar{
 		menu.add(charger);
 		menu.add(accueil);
 		menu.add(aide);
+		menu.addSeparator();
 		menu.add(quitter);
 		
 		add(menu);
@@ -44,6 +48,10 @@ public class MenuEditeur extends JMenuBar{
 	private class EcouteurMenuEditeur implements ActionListener{
 
 		public void actionPerformed(ActionEvent e) {
+			
+			if(e.getActionCommand().equals("Nouvelle carte"))
+				controleurEditeur.nouvelleCarte();
+			
 			if(e.getActionCommand().equals("Quitter"))
 				fEditeur.dispose();
 			
