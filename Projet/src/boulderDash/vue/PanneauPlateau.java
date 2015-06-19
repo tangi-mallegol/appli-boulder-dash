@@ -4,7 +4,11 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.Observable;
 import java.util.Observer;
+
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import boulderDash.vue.composant.elementsJeu.PanneauPersonnage;
 
 public class PanneauPlateau extends JPanel implements Observer{
 	private PanneauElementJeu[][] tabPanneauxElementsJeu;
@@ -22,11 +26,37 @@ public class PanneauPlateau extends JPanel implements Observer{
 	}
 	
 	public void deplace(int x1, int y1, int x2, int y2){
+		System.out.println(SwingUtilities.getWindowAncestor(this).getClass().getName());
 		//x1 et y1 sont les coordonnées du personnage
-		tabPanneauxElementsJeu[x2][y2].removeAll();
-		tabPanneauxElementsJeu[x2][y2].add(tabPanneauxElementsJeu[x1][y1].getComponent(0));
-		tabPanneauxElementsJeu[x1][y1].removeAll();
+		//tabPanneauxElementsJeu[x2][y2].removeAll();
+		PanneauElementJeu e1 = tabPanneauxElementsJeu[x1][y1];
+		PanneauElementJeu e2 = tabPanneauxElementsJeu[x2][y2];
+		remove(tabPanneauxElementsJeu[x1][y1]);
+		remove(tabPanneauxElementsJeu[x2][y2]);
+		if(tabPanneauxElementsJeu[x1][y1].getClass().getName().equals("boulderDash.vue.composant.elementsJeu.PanneauPersonnage")){
+			PanneauPersonnage p = (PanneauPersonnage)e1;
+			//System.out.println("test");
+			p.Stop();
+			
+			//System.out.println(p.getComponent(0).getClass().getName());
+			tabPanneauxElementsJeu[x1][y1] = e2;
+			tabPanneauxElementsJeu[x2][y2] = p;
+			p.Move();
+			//tabPanneauxElementsJeu[x2][y2].add(p.getComponent(0));
+			//System.out.println(p.getComponentCount());
+			
+		}
+		else{
+			PanneauPersonnage p = (PanneauPersonnage)tabPanneauxElementsJeu[x1][y1];
+			tabPanneauxElementsJeu[x1][y1] = tabPanneauxElementsJeu[x2][y2];
+			tabPanneauxElementsJeu[x2][y2] = p;
+		}
 		
+		//tabPanneauxElementsJeu[x2][y2].add(tabPanneauxElementsJeu[x1][y1].getComponent(0));
+		//tabPanneauxElementsJeu[x1][y1].removeAll();
+		add(tabPanneauxElementsJeu[x1][y1]);
+		add(tabPanneauxElementsJeu[x2][y2]);
+		this.repaint();
 		tabPanneauxElementsJeu[x1][y1].repaint();
 		tabPanneauxElementsJeu[x2][y2].repaint();
 	}

@@ -18,9 +18,11 @@ import boulderDash.vue.PanneauElementJeu;
 
 public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 	private JLabel[][] TableauImage;
+	public Sprite sprite;
 	
 	public PanneauPersonnage(){
 		BufferedImage ii = null;
+		
 		try {
 			ii = ImageIO.read(new File("./donnees/images/rockford.gif"));
 			//imageLabel.setIcon(ii);
@@ -34,28 +36,40 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		TableauImage[0][0].setIcon(new ImageIcon(ii.getSubimage(8 ,8 ,16,16)));
 		TableauImage[0][0].setBounds(0, 0, 16, 16);
 		for(int i = 1; i < 6; i ++){
-			System.out.println("i = " + i);
+			//System.out.println("i = " + i);
 			for(int j = 0; j < 8; j ++){
-				System.out.println("j = " + j);
+				//System.out.println("j = " + j);
 				TableauImage[i][j] = new JLabel();
 				TableauImage[i][j].setIcon(new ImageIcon(ii.getSubimage(7 + 16*j +8*j,7 + 16*i + 8*i ,16,16)));
 				TableauImage[i][j].setBounds(0, 0, 16, 16);
 			}
 		}
 		//add(TableauImage[0][0]);
+		//sprite.run();
 		Move();
 	}
 
+	
+	public void Move(){
+		sprite = new Sprite(this);
+		sprite.start();
+	}
+	
+	public void Stop(){
+		try{
+			sprite.StopMove();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public void Move(){
-		Sprite sprite = new Sprite(this);
-		sprite.start();
-	}
 	
 	public class Sprite extends Thread{
 		
@@ -86,6 +100,18 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			}
+		}
+		
+		public void StopMove(){
+			stop();
+			try{
+				//System.out.println("test");
+				p.add(TableauImage[4][i%8]);
+				//System.out.println(p.getComponentCount());
+			}
+			catch(Exception e){
+				e.printStackTrace();
 			}
 		}
 		
