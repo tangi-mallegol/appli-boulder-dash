@@ -11,6 +11,8 @@ import javax.swing.SwingUtilities;
 import boulderDash.vue.composant.elementsJeu.PanneauPersonnage;
 import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
+import boulderDash.vue.composant.elementsJeu.PanneauVide;
+
 public class PanneauPlateau extends JPanel implements Observer{
 	private PanneauElementJeu[][] tabPanneauxElementsJeu;
 	
