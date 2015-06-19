@@ -15,9 +15,11 @@ public class FenetreTaillePlateau extends JFrame{
 	private ControleurEditeur controleurEditeur;
 	private JTextField tfX, tfY;
 	private JButton bAnnuler, bValider;
+	private FenetreEditeur fEditeur;
 	
-	public FenetreTaillePlateau(ControleurEditeur controleurEditeur){
+	public FenetreTaillePlateau(ControleurEditeur controleurEditeur, FenetreEditeur fEditeur){
 		this.controleurEditeur = controleurEditeur;
+		this.fEditeur = fEditeur;
 		
 		setTitle("Boulder Dash");
 		setSize(350, 125);
@@ -54,13 +56,14 @@ public class FenetreTaillePlateau extends JFrame{
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource() == bAnnuler)
+			if(e.getSource() == bAnnuler){
 				fTaillePlateau.dispose();
+			}
 			
 			if(e.getSource() == bValider){
-				controleurEditeur.initPlateau(Integer.parseInt(tfX.getText()), Integer.parseInt(tfY.getText()));
+				fTaillePlateau.dispose();
+				controleurEditeur.initPlateau(Integer.parseInt(tfX.getText()), Integer.parseInt(tfY.getText()), fEditeur);
 			}				
-		}
-		
+		}		
 	}
 }

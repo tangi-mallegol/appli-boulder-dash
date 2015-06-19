@@ -6,6 +6,8 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 
+import boulderDash.vue.composant.elementsJeu.PanneauVide;
+
 public class PanneauPlateau extends JPanel implements Observer{
 	private PanneauElementJeu[][] tabPanneauxElementsJeu;
 	

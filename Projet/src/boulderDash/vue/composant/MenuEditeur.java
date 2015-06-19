@@ -50,7 +50,7 @@ public class MenuEditeur extends JMenuBar{
 		public void actionPerformed(ActionEvent e) {
 			
 			if(e.getActionCommand().equals("Nouvelle carte"))
-				controleurEditeur.nouvelleCarte();
+				controleurEditeur.nouvelleCarte(fEditeur);
 			
 			if(e.getActionCommand().equals("Quitter"))
 				fEditeur.dispose();
