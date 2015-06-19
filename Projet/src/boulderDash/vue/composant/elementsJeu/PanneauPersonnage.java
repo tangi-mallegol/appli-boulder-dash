@@ -8,6 +8,7 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -51,7 +52,7 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 
 	
 	public void Move(){
-		sprite = new Sprite(this);
+		sprite = new Sprite(this, 2);
 		sprite.start();
 	}
 	
@@ -62,6 +63,13 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public void Move(int etat){
+		if(sprite != null)
+			sprite.stop();
+		sprite = new Sprite(this, etat);
+		sprite.start();
 	}
 	
 	@Override
@@ -75,26 +83,41 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		
 		private int i;
 		private PanneauPersonnage p;
+		private int etat;
+		/*
+		 * Ici, on défini les etats en fonction de l'emplacement des images dans TableauImage :
+		 * 
+		 * 1 : Ne bouge pas / Descend
+		 * 2 : Monte
+		 * 3 : Va à gauche
+		 * 4 : Va à droite
+		 * 
+		 */
 		
-		public Sprite(PanneauPersonnage p){
+		
+		public Sprite(PanneauPersonnage p, int etat){
+			this.etat = etat;
 			i = 0;
 			this.p = p;
 		}
 		
 		public void run(){
 			try {
-				sleep(500);
+				sleep(50);
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			while(true){
-				p.remove(TableauImage[4][i%8]);
+				//On met le sprite de direction pendant 3 frame car boulder arrête de bouger au bout d'un moment
+				if(i>3)
+					etat = 1;
+				p.removeAll();
 				i++;
-				//System.out.println("["+ i%6 + ":" + 0 + "]");
-				p.add(TableauImage[4][i%8]);
+				p.add(TableauImage[etat][i%8]);
 				p.repaint();
 				try {
+					//On met un temps de 50 ms entre chaque changement de frame
 					sleep(50);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -103,32 +126,12 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 			}
 		}
 		
+		public int getEtat(){
+			return this.etat;
+		}
+		
 		public void StopMove(){
 			stop();
-			try{
-				//System.out.println("test");
-				p.add(TableauImage[4][i%8]);
-				//System.out.println(p.getComponentCount());
-			}
-			catch(Exception e){
-				e.printStackTrace();
-			}
-		}
-		
-		public void left(){
-			
-		}
-		
-		public void right(){
-			
-		}
-		
-		public void haut(){
-			
-		}
-		
-		public void bas(){
-			
 		}
 		
 	}
