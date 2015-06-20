@@ -17,7 +17,24 @@ public class ControleurEditeur extends Controleur{
 	
 	public void initPlateau(int x, int y, FenetreEditeur fEditeur){
 		plateau = new Plateau(x, y);
-		plateau.addObserver(fEditeur.getpPlateau());
+		plateau.addObserver(fEditeur);
 		plateau.initPanneauPlateau();
+	}
+	
+	public void addElement(int x, int y, String element){
+		
+		if(element.equals("Personnage"))
+			plateau.addPersonnage(x, y);
+		
+		if(element.equals("MurSimple"))
+			plateau.addMurSimple(x, y);
+		
+		if(element.equals("Terre"))
+			plateau.addTerre(x, y);
+		
+		if(element.equals("Pierre"))
+			plateau.addPierre(x, y);
+		
+		plateau.modifPanneauPlateau(element, x, y);
 	}
 }

@@ -20,6 +20,7 @@ public class PanneauInfoEditeur extends JPanel{
 	private JPanel pElements;
 	private JPanel pGridElements;
 	private JPanel pInfos;
+	private String sElementEnCours;
 	
 	public PanneauInfoEditeur(){
 		setLayout(new BorderLayout());
@@ -57,10 +58,12 @@ public class PanneauInfoEditeur extends JPanel{
 		setVisible(true);
 	}
 	
+	public String getElementEnCours(){ return sElementEnCours; }
+	
 	public class EcouteurPElementsJeu implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
-			System.out.println(e.getSource().getClass().getName());
-			
+			sElementEnCours = e.getSource().getClass().getName().substring(45, e.getSource().getClass().getName().length());
+			System.out.println(sElementEnCours);
 		}
 
 		public void mouseEntered(MouseEvent e)  {}

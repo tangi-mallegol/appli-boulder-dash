@@ -53,6 +53,12 @@ public class Plateau extends Observable{
 		notifyObservers(tabElementsJeu);
 	}
 	
+	public void modifPanneauPlateau(String element, Integer x, Integer y){
+		String[] tabLocationModif = {element, x.toString(), y.toString()};
+		setChanged();
+		notifyObservers(tabLocationModif);
+	}
+	
 	public ElementJeu[][] getTabElementsJeu() {
 		return tabElementsJeu;
 	}
