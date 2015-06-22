@@ -29,8 +29,9 @@ public class PanneauPlateau extends JPanel implements Observer{
 	}
 	
 	public void modifPanneauElementJeu(PanneauElementJeu panneauElementJeu, int x, int y){		
-		//System.out.println(tabPanneauxElementsJeu[x][y].getClass().getName());
-		tabPanneauxElementsJeu[x][y] = panneauElementJeu;
+		System.out.println(tabPanneauxElementsJeu[x][y].getClass().getName());
+		tabPanneauxElementsJeu[x][y].removeAll();
+		tabPanneauxElementsJeu[x][y].add(panneauElementJeu);
 		tabPanneauxElementsJeu[x][y].repaint();
 		this.repaint();
 		System.out.println(tabPanneauxElementsJeu[x][y].getClass().getName());

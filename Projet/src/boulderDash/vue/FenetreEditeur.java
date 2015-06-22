@@ -44,7 +44,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 				for(int i = 0; i < tabElementsJeu[0].length; i++){
 					for(int j = 0; j < tabElementsJeu.length; j++){
 						if(tabElementsJeu[j][i] == null)
-							pPlateau.add(new PanneauVide());
+							pPlateau.addPanneauElementJeu(new PanneauVide(), j, i);
 						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
 							pPlateau.addPanneauElementJeu(new PanneauMurAcier(), j, i);
 						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
@@ -69,7 +69,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 				
 				/*if(tabModif[0].equals("Vide"))
 					pPlateau.addPanneauElementJeu(new PanneauVide(), tabModif[1], tabModif[2]);
-				else */if(tabModif[0].equals("MurAcier"))
+				else*/ if(tabModif[0].equals("MurAcier"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurAcier(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("MurSimple"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurSimple(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
@@ -98,7 +98,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			System.out.println(e.getX()/16+" "+((e.getY()/16)-2));
-			controleurEditeur.addElement(e.getX()/16, ((e.getY()/16)), pInfoEditeur.getElementEnCours());
+			controleurEditeur.addElement(e.getX()/16, ((e.getY()/16)-2), pInfoEditeur.getElementEnCours());
 		}
 
 		@Override

@@ -22,7 +22,6 @@ public class ControleurEditeur extends Controleur{
 	}
 	
 	public void addElement(int x, int y, String element){
-		
 		if(element.equals("Personnage"))
 			plateau.addPersonnage(x, y);
 		
