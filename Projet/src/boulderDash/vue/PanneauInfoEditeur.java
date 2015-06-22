@@ -20,6 +20,7 @@ public class PanneauInfoEditeur extends JPanel{
 	private JPanel pElements;
 	private JPanel pGridElements;
 	private JPanel pInfos;
+	private PanneauElementJeu pElementEnCours;
 	private String sElementEnCours;
 	
 	public PanneauInfoEditeur(){
@@ -52,8 +53,14 @@ public class PanneauInfoEditeur extends JPanel{
 		}
 		
 		pElements = new JPanel();		
-		pElements.add(pGridElements);
+		pElements.add(pGridElements);		
+		
+		pInfos = new JPanel();
+		pElementEnCours = new PanneauPersonnage();
+		pInfos.add(pElementEnCours);
+		
 		add(pElements, BorderLayout.CENTER);
+		add(pInfos, BorderLayout.SOUTH);
 		
 		setVisible(true);
 	}

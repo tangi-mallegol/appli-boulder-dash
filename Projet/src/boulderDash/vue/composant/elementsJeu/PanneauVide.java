@@ -6,6 +6,6 @@ import boulderDash.vue.PanneauElementJeu;
 
 public class PanneauVide extends PanneauElementJeu{
 	public PanneauVide(){
-		setBackground(Color.RED);
+		setBackground(Color.BLACK);
 	}
 }
