@@ -35,7 +35,6 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 	}
 	
 	public void update(Observable arg0, Object arg1) {
-		//Si la notification vient de Plateau alors c'est une nouvelle partie 
 		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau")){	
 			if(arg1.getClass().getName().equals("[[LboulderDash.modele.ElementJeu;")){
 				ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
@@ -67,22 +66,22 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 				this.setVisible(true);
 			}else{
 				String tabModif[] = (String[]) arg1;
-				System.out.println(tabModif[0]);
 				
 				/*if(tabModif[0].equals("Vide"))
 					pPlateau.addPanneauElementJeu(new PanneauVide(), tabModif[1], tabModif[2]);
 				else */if(tabModif[0].equals("MurAcier"))
-					this.pPlateau.addPanneauElementJeu(new PanneauMurAcier(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauMurAcier(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("MurSimple"))
-					this.pPlateau.addPanneauElementJeu(new PanneauMurSimple(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauMurSimple(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("MurMagique"))
-					this.pPlateau.addPanneauElementJeu(new PanneauMurMagique(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauMurMagique(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("Terre"))
-					this.pPlateau.addPanneauElementJeu(new PanneauTerre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauTerre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("Pierre"))
-					this.pPlateau.addPanneauElementJeu(new PanneauPierre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauPierre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("Personnage"))
-					this.pPlateau.addPanneauElementJeu(new PanneauPersonnage(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+					this.pPlateau.modifPanneauElementJeu(new PanneauPersonnage(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+				
 				
 				this.repaint();
 				this.setVisible(true);
@@ -99,7 +98,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			System.out.println(e.getX()/16+" "+((e.getY()/16)-2));
-			controleurEditeur.addElement(e.getX()/16, ((e.getY()/16)-2), pInfoEditeur.getElementEnCours());
+			controleurEditeur.addElement(e.getX()/16, ((e.getY()/16)), pInfoEditeur.getElementEnCours());
 		}
 
 		@Override

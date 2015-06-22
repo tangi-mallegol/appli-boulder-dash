@@ -28,6 +28,14 @@ public class PanneauPlateau extends JPanel implements Observer{
 		add(tabPanneauxElementsJeu[x][y]);
 	}
 	
+	public void modifPanneauElementJeu(PanneauElementJeu panneauElementJeu, int x, int y){		
+		//System.out.println(tabPanneauxElementsJeu[x][y].getClass().getName());
+		tabPanneauxElementsJeu[x][y] = panneauElementJeu;
+		tabPanneauxElementsJeu[x][y].repaint();
+		this.repaint();
+		System.out.println(tabPanneauxElementsJeu[x][y].getClass().getName());
+	}
+	
 	public void deplace(int x1, int y1, int x2, int y2, char direction){
 		//System.out.println(SwingUtilities.getWindowAncestor(this).getClass().getName());
 		//x1 et y1 sont les coordonnées du personnage
