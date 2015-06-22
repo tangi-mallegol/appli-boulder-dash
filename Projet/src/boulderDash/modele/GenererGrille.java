@@ -96,6 +96,9 @@ public class GenererGrille {
         		case '+':
         			plateau.addPierre(index_colonne,index_ligne);
         			break;
+        		case 'D':
+        			plateau.addDiamant(index_colonne,index_ligne);
+        			break;
         		case 'X':
         			plateau.addMurMagique(index_colonne,index_ligne);
         			break;
