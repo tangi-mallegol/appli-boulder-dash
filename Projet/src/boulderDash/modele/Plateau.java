@@ -43,6 +43,10 @@ public class Plateau extends Observable{
 		tabElementsJeu[x][y] = new Pierre();
 	}
 	
+	public void addDiamant(int x, int y) {
+		tabElementsJeu[x][y] = new Diamant();
+	}
+	
 	public void addPersonnage(int x, int y){
 		personnage = new Personnage(x, y, this);
 		tabElementsJeu[x][y] = personnage;
@@ -66,4 +70,6 @@ public class Plateau extends Observable{
 	public Personnage getPersonnage() {
 		return personnage;
 	}
+
+	
 }
