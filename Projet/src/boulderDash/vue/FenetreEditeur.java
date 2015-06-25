@@ -44,7 +44,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 				for(int i = 0; i < tabElementsJeu[0].length; i++){
 					for(int j = 0; j < tabElementsJeu.length; j++){
 						if(tabElementsJeu[j][i] == null)
-							pPlateau.addPanneauElementJeu(new PanneauVide(), j, i);
+							pPlateau.addPanneauElementJeu(new PanneauTerre(), j, i);
 						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier"))
 							pPlateau.addPanneauElementJeu(new PanneauMurAcier(), j, i);
 						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple"))
@@ -69,7 +69,8 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 				
 				/*if(tabModif[0].equals("Vide"))
 					pPlateau.addPanneauElementJeu(new PanneauVide(), tabModif[1], tabModif[2]);
-				else*/ if(tabModif[0].equals("MurAcier"))
+				else*/ 
+				if(tabModif[0].equals("MurAcier"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurAcier(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("MurSimple"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurSimple(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
@@ -91,6 +92,52 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 	
 	public PanneauPlateau getpPlateau() {
 		return pPlateau;
+	}
+	
+	public String[][] GenererTableauDonnées() {
+		/*
+		 * Fonction qui récupère le tableau des élements de pPlateau, sa largeur et sa hauteur
+		 * Ensuite, on génère un tableau de string contenant les symboles des types de panneau
+		 * On utilisera ce tableau pour sauvegarder le niveau
+		 */
+		
+		//Récupération du tableau d'élements et ses infos
+		PanneauElementJeu[][] p = pPlateau.getTabPanneauElement();
+		int x = pPlateau.getWidthTab();
+		int y = pPlateau.getHeightTab();
+		String[][] tableau_données = new String[x][y];
+		for(int i = 0; i < x; i++){
+			for(int j = 0; j < y; j ++){
+				switch(p[i][j].getClass().getName()){
+				case "boulderDash.modele.elementsJeu.PanneauMurAcier":
+					//Les murs acier ne sont pas affichés dans le csv
+					tableau_données[i][j] = "";
+					break;
+				case "boulderDash.modele.elementsJeu.PanneauMurSimple":
+					tableau_données[i][j] = "-";
+					break;
+				case "boulderDash.modele.elementsJeu.PanneauMurMagique":
+					tableau_données[i][j] = "X";
+					break;
+				case "boulderDash.vue.composant.elementsJeu.PanneauTerre":
+					tableau_données[i][j] = "0";
+					break;
+				case "boulderDash.modele.elementsJeu.PanneauPierre":
+					tableau_données[i][j] = "+";
+					break;
+				case "boulderDash.modele.elementsJeu.PanneauPersonnage":
+					tableau_données[i][j] = "R";
+					break;
+				case "boulderDash.modele.elementsJeu.PanneauDiamant":
+					tableau_données[i][j] = "D";
+					break;
+				}
+				System.out.print(tableau_données[i][j] + ";");
+			}
+			System.out.print("\n");
+		}
+		
+		return tableau_données;
 	}
 
 	public class EcouteurSouris implements MouseListener{
