@@ -14,27 +14,11 @@ import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class PanneauPlateau extends JPanel implements Observer{
 	private PanneauElementJeu[][] tabPanneauxElementsJeu;
-	private int width_tab;
-	private int height_tab;
 	
 	public PanneauPlateau(int x, int y){
 		setLayout(new GridLayout(y,x));
 		setSize(new Dimension(16*x, 16*y));
 		tabPanneauxElementsJeu = new PanneauElementJeu[x][y];
-		this.width_tab = x;
-		this.height_tab = y;
-	}
-	
-	public PanneauElementJeu[][] getTabPanneauElement(){
-		return this.tabPanneauxElementsJeu;
-	}
-	
-	public int getWidthTab(){
-		return this.width_tab;
-	}
-	
-	public int getHeightTab(){
-		return this.height_tab;
 	}
 	
 	public void addPanneauElementJeu(PanneauElementJeu panneauElementJeu, int x, int y){		

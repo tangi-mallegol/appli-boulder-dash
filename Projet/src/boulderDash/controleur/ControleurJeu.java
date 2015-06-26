@@ -15,6 +15,7 @@ import boulderDash.vue.composant.elementsJeu.PanneauVide;
 
 public class ControleurJeu extends Controleur{
 	private Plateau plateau;
+	private String nomNiveauEnCours;
 	
 	public ControleurJeu(){
 		
@@ -22,6 +23,7 @@ public class ControleurJeu extends Controleur{
 	}
 	
 	public void initNiveau(String nomNiveau, FenetreJeu fj){
+		nomNiveauEnCours = nomNiveau;
 		GenererGrille genererGrille = new GenererGrille(nomNiveau);
 		
 		try {
@@ -30,6 +32,14 @@ public class ControleurJeu extends Controleur{
 			e1.printStackTrace();
 		}
 		plateau.getPersonnage().addObserver(fj.getpPlateau());
+	}
+	
+	public void NouvellePartie(FenetreJeu fj){
+		System.out.println("Nouvelle partie!");
+		initNiveau(nomNiveauEnCours, fj);
+	}
+	
+	public void OuvrirAide(){
 	}
 	
 	public void moveUP(){		

@@ -1,19 +1,12 @@
 package boulderDash.vue;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 
 import boulderDash.vue.composant.elementsJeu.*;
 
@@ -35,24 +28,24 @@ public class PanneauInfoEditeur extends JPanel{
 		
 		pGridElements = new JPanel(layoutpElements);
 		
-		tabpElementsJeu = new PanneauElementJeu[9];
+		tabpElementsJeu = new PanneauElementJeu[10];
 		
 		tabpElementsJeu[0] = new PanneauPersonnage();
-		//tabpElementsJeu[1] = new PanneauMurAcier();
-		tabpElementsJeu[1] = new PanneauVide();
-		tabpElementsJeu[2] = new PanneauTerre();
-		tabpElementsJeu[3] = new PanneauMurSimple();
-		tabpElementsJeu[4] = new PanneauPierre();
+		tabpElementsJeu[1] = new PanneauMurAcier();
+		tabpElementsJeu[2] = new PanneauVide();
+		tabpElementsJeu[3] = new PanneauTerre();
+		tabpElementsJeu[4] = new PanneauMurSimple();
 		tabpElementsJeu[5] = new PanneauPierre();
 		tabpElementsJeu[6] = new PanneauPierre();
 		tabpElementsJeu[7] = new PanneauPierre();
 		tabpElementsJeu[8] = new PanneauPierre();
+		tabpElementsJeu[9] = new PanneauPierre();
 		
 		
-		EcouteurPElementsJeu ecouteurPElementsJeu = new EcouteurPElementsJeu();
+		EcouteurSouris ecouteurSouris = new EcouteurSouris();
 		
 		for(int i = 0; i<tabpElementsJeu.length; i++){
-			tabpElementsJeu[i].addMouseListener(ecouteurPElementsJeu);
+			tabpElementsJeu[i].addMouseListener(ecouteurSouris);
 			pGridElements.add(tabpElementsJeu[i]);
 		}
 		
@@ -60,12 +53,9 @@ public class PanneauInfoEditeur extends JPanel{
 		pElements.add(pGridElements);		
 		
 		pInfos = new JPanel();
-		bSauvegarder = new JButton();
-		bSauvegarder.setLabel("Sauvegarder");
-		bSauvegarder.addMouseListener(new EcouteurSauvegarde());
+		
 		pElementEnCours = new PanneauPersonnage();
 		pInfos.add(pElementEnCours);
-		pInfos.add(bSauvegarder);
 		
 		add(pElements, BorderLayout.CENTER);
 		add(pInfos, BorderLayout.SOUTH);
@@ -75,26 +65,12 @@ public class PanneauInfoEditeur extends JPanel{
 	
 	public String getElementEnCours(){ return sElementEnCours; }
 	
-	public class EcouteurPElementsJeu implements MouseListener{
+	public class EcouteurSouris implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 			sElementEnCours = e.getSource().getClass().getName().substring(45, e.getSource().getClass().getName().length());
 			System.out.println(sElementEnCours);
 		}
 
-		public void mouseEntered(MouseEvent e)  {}
-		public void mouseExited(MouseEvent e)   {}
-		public void mousePressed(MouseEvent e)  {}
-		public void mouseReleased(MouseEvent e) {}
-	}
-	
-	public class EcouteurSauvegarde implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-			System.out.println("Mouse Listener MouseClicked");
-			FenetreEditeur f = (FenetreEditeur) SwingUtilities.getWindowAncestor((Component) e.getSource());
-			f.GenererTableauDonnées();
-			//System.out.println(SwingUtilities.getWindowAncestor());
-		}
-		
 		public void mouseEntered(MouseEvent e)  {}
 		public void mouseExited(MouseEvent e)   {}
 		public void mousePressed(MouseEvent e)  {}

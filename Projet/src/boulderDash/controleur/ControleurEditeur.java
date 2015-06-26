@@ -1,5 +1,6 @@
 package boulderDash.controleur;
 
+import boulderDash.modele.GenererCSV;
 import boulderDash.modele.Plateau;
 import boulderDash.vue.FenetreEditeur;
 import boulderDash.vue.FenetreTaillePlateau;
@@ -15,8 +16,8 @@ public class ControleurEditeur extends Controleur{
 		new FenetreTaillePlateau(this, fEditeur);
 	}
 	
-	public void initPlateau(int x, int y, FenetreEditeur fEditeur){
-		plateau = new Plateau(x, y);
+	public void initPlateau(int x, int y, String nomCarte, FenetreEditeur fEditeur){
+		plateau = new Plateau(x, y, nomCarte);
 		plateau.addObserver(fEditeur);
 		plateau.initPanneauPlateau();
 	}
@@ -35,5 +36,10 @@ public class ControleurEditeur extends Controleur{
 			plateau.addPierre(x, y);
 		
 		plateau.modifPanneauPlateau(element, x, y);
+	}
+	
+	public void saveMAP(){
+		GenererCSV genererCSV = new GenererCSV(plateau);
+		genererCSV.GenererEtSauvegarder();		
 	}
 }

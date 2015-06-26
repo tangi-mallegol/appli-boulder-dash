@@ -13,7 +13,7 @@ import boulderDash.controleur.ControleurEditeur;
 
 public class FenetreTaillePlateau extends JFrame{
 	private ControleurEditeur controleurEditeur;
-	private JTextField tfX, tfY;
+	private JTextField tfX, tfY, tfNom;
 	private JButton bAnnuler, bValider;
 	private FenetreEditeur fEditeur;
 	
@@ -25,10 +25,11 @@ public class FenetreTaillePlateau extends JFrame{
 		setSize(350, 125);
 		setResizable(true);
 		setLocationRelativeTo(null);
-		setLayout(new GridLayout(3, 2));
+		setLayout(new GridLayout(4, 2));
 		
 		tfX = new JTextField();
 		tfY = new JTextField();
+		tfNom = new JTextField();
 		
 		bAnnuler = new JButton("Annuler");
 		bValider = new JButton("Valider");
@@ -41,6 +42,8 @@ public class FenetreTaillePlateau extends JFrame{
 		add(tfX);
 		add(new JLabel("Hauteur :"));
 		add(tfY);
+		add(new JLabel("Nom :"));
+		add(tfNom);
 		add(bAnnuler);
 		add(bValider);
 		
@@ -62,7 +65,7 @@ public class FenetreTaillePlateau extends JFrame{
 			
 			if(e.getSource() == bValider){
 				fTaillePlateau.dispose();
-				controleurEditeur.initPlateau(Integer.parseInt(tfX.getText()), Integer.parseInt(tfY.getText()), fEditeur);
+				controleurEditeur.initPlateau(Integer.parseInt(tfX.getText()), Integer.parseInt(tfY.getText()), tfNom.getText(), fEditeur);
 			}				
 		}		
 	}

@@ -15,6 +15,7 @@ import boulderDash.vue.FenetreEditeur;
 public class MenuEditeur extends JMenuBar{
 	private FenetreEditeur fEditeur;
 	private ControleurEditeur controleurEditeur;
+	private JMenuItem nouveau, charger, sauvegarder, accueil, aide , quitter;
 	
 	public MenuEditeur(FenetreEditeur fEditeur, ControleurEditeur controleurEditeur){
 		this.fEditeur = fEditeur;
@@ -22,21 +23,24 @@ public class MenuEditeur extends JMenuBar{
 		
 		JMenu menu = new JMenu("Menu");
 		
-		JMenuItem nouveau = new JMenuItem("Nouvelle carte");
-		JMenuItem charger = new JMenuItem("Charger une carte");
-		JMenuItem accueil = new JMenuItem("Accueil");
-		JMenuItem aide = new JMenuItem("Aide");
-		JMenuItem quitter = new JMenuItem("Quitter");
+		nouveau = new JMenuItem("Nouvelle carte");
+		charger = new JMenuItem("Charger une carte");
+		sauvegarder = new JMenuItem("Sauvegarder");
+		accueil = new JMenuItem("Accueil");
+		aide = new JMenuItem("Aide");
+		quitter = new JMenuItem("Quitter");
 		
 		EcouteurMenuEditeur ecouteurMenuEditeur = new EcouteurMenuEditeur();
 		nouveau.addActionListener(ecouteurMenuEditeur);
 		charger.addActionListener(ecouteurMenuEditeur);
+		sauvegarder.addActionListener(ecouteurMenuEditeur);
 		accueil.addActionListener(ecouteurMenuEditeur);
 		aide.addActionListener(ecouteurMenuEditeur);
 		quitter.addActionListener(ecouteurMenuEditeur);
 		
 		menu.add(nouveau);
 		menu.add(charger);
+		menu.add(sauvegarder);
 		menu.add(accueil);
 		menu.add(aide);
 		menu.addSeparator();
@@ -49,15 +53,19 @@ public class MenuEditeur extends JMenuBar{
 
 		public void actionPerformed(ActionEvent e) {
 			
-			if(e.getActionCommand().equals("Nouvelle carte"))
+			if(e.getSource() == nouveau)
 				controleurEditeur.nouvelleCarte(fEditeur);
 			
-			if(e.getActionCommand().equals("Quitter"))
+			if(e.getSource() == quitter)
 				fEditeur.dispose();
 			
-			if(e.getActionCommand().equals("Accueil")){
+			if(e.getSource() == accueil){
 				fEditeur.dispose();
 				new FenetreAccueil(new ControleurAccueil());
+			}
+			
+			if(e.getSource() == sauvegarder){
+				controleurEditeur.saveMAP();
 			}
 		}		
 	}

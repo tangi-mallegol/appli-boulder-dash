@@ -36,6 +36,12 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau")){			
 			ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
 			
+			//Si c'est la première initialisation, pPlateau ne sera pas présent : nullPointerException
+			try{
+				this.remove(pPlateau);
+			}catch(Exception e){}
+			
+			
 			pPlateau = new PanneauPlateau(tabElementsJeu.length, tabElementsJeu[0].length);
 			
 			for(int i = 0; i < tabElementsJeu[0].length; i++){
