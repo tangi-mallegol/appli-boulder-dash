@@ -62,8 +62,11 @@ public class Personnage extends Observable implements ElementJeu{
 				tabLocation[2] = "HAUT";
 			}
 				
+			plateau.deplaceElement(this.x, this.y, x, y);
+			
 			this.x = x;
-			this.y = y;
+			this.y = y;			
+			
 			setChanged();
 			
 			notifyObservers(tabLocation);

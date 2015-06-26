@@ -84,6 +84,9 @@ public class GenererGrille {
         		
         		char caractere = sCaractere.charAt(0);
         		switch(caractere){
+        		case '=' :
+        			plateau.addMurAcier(index_colonne,index_ligne);
+        			break;
         		case '0' :
         			plateau.addTerre(index_colonne,index_ligne);
         			break;
@@ -101,6 +104,9 @@ public class GenererGrille {
         			break;
         		case 'X':
         			plateau.addMurMagique(index_colonne,index_ligne);
+        			break;
+        		default:
+        			plateau.addVide(index_colonne,index_ligne);
         			break;
         		}
         		index_colonne ++;
