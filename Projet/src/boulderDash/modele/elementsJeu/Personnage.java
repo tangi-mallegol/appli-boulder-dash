@@ -41,6 +41,9 @@ public class Personnage extends Observable implements ElementJeu{
 		   plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre") )
 			bDeplaceOK = false;
 		
+		if(plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant"))
+				plateau.supprDiamant(x, y);
+		
 		if(bDeplaceOK){			
 			if(this.x<x){
 				tabLocation[0] = x.toString();
@@ -73,4 +76,7 @@ public class Personnage extends Observable implements ElementJeu{
 		}
 
 	}
+
+	public int getX() {return x;}
+	public int getY() {return y;}
 }

@@ -67,10 +67,9 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 			}else{
 				String tabModif[] = (String[]) arg1;
 				
-				/*if(tabModif[0].equals("Vide"))
-					pPlateau.addPanneauElementJeu(new PanneauVide(), tabModif[1], tabModif[2]);
-				else*/ 
-				if(tabModif[0].equals("MurAcier"))
+				if(tabModif[0].equals("Vide"))
+					pPlateau.modifPanneauElementJeu(new PanneauVide(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+				else if(tabModif[0].equals("MurAcier"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurAcier(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("MurSimple"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauMurSimple(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
@@ -82,8 +81,7 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 					this.pPlateau.modifPanneauElementJeu(new PanneauPierre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("Personnage"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauPersonnage(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
-				
-				
+								
 				this.repaint();
 				this.setVisible(true);
 			}

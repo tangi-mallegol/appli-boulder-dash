@@ -105,7 +105,7 @@ public class GenererGrille {
         		case 'X':
         			plateau.addMurMagique(index_colonne,index_ligne);
         			break;
-        		default:
+        		case ' ':
         			plateau.addVide(index_colonne,index_ligne);
         			break;
         		}

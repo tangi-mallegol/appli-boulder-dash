@@ -11,7 +11,13 @@ public class MurSimple implements ElementJeu{
 	
 	//Traduit en .csv par -
 	
-	public MurSimple(){
-
+	private int x,y;
+	
+	public MurSimple(int x, int y){
+		this.x = x;
+		this.y = y;
 	}
+
+	public int getX() {return x;}
+	public int getY() {return y;}
 }

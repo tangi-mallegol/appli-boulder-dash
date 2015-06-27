@@ -36,6 +36,8 @@ public class GenererCSV {
 						output.write("R");
 					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant"))
 						output.write("D");
+					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Vide"))
+						output.write(" ");
 					
 					if(j!=tabElementsJeu.length-1)
 						output.write(";");

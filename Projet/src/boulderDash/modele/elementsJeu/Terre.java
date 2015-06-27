@@ -6,5 +6,13 @@ public class Terre implements ElementJeu{
 
 	//Traduit par = sur le .csv
 	
+	private int x,y;
 	
+	public Terre(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+
+	public int getX() {return x;}
+	public int getY() {return y;}
 }

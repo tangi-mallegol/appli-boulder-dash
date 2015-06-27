@@ -33,7 +33,7 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		//Si la notification vient de Plateau alors c'est une nouvelle partie 
-		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau")){			
+		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau") && !arg1.getClass().getName().equals("[Ljava.lang.String;")){			
 			ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
 			
 			//Si c'est la première initialisation, pPlateau ne sera pas présent : nullPointerException
@@ -77,8 +77,7 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 	}
 
 	public class EcouteurClavier implements KeyListener{
-		public void keyPressed(KeyEvent e) {
-			
+		public void keyPressed(KeyEvent e) {			
 			int source = e.getKeyCode();
 			
             if(source==KeyEvent.VK_UP)
@@ -92,8 +91,6 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 		}
 
 		public void keyReleased(KeyEvent e) {}
-
-		public void keyTyped(KeyEvent e) {}
-		
+		public void keyTyped(KeyEvent e)    {}
 	}
 }

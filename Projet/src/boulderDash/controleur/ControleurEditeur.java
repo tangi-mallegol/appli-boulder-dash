@@ -35,6 +35,12 @@ public class ControleurEditeur extends Controleur{
 		if(element.equals("Pierre"))
 			plateau.addPierre(x, y);
 		
+		if(element.equals("Vide"))
+			plateau.addVide(x, y);
+		
+		if(element.equals("MurAcier"))
+			plateau.addMurAcier(x, y);
+		
 		plateau.modifPanneauPlateau(element, x, y);
 	}
 	
