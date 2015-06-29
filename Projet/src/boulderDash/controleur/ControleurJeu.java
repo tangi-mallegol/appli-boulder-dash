@@ -3,6 +3,7 @@ package boulderDash.controleur;
 import java.io.IOException;
 
 import boulderDash.modele.GenererGrille;
+import boulderDash.modele.InfoJeu;
 import boulderDash.modele.Plateau;
 import boulderDash.modele.elementsJeu.Diamant;
 import boulderDash.modele.elementsJeu.Pierre;
@@ -11,11 +12,9 @@ import boulderDash.vue.FenetreJeu;
 public class ControleurJeu extends Controleur{
 	private Plateau plateau;
 	private String nomNiveauEnCours;
+	private InfoJeu infoJeu;
 	
-	public ControleurJeu(){
-		
-		
-	}
+	public ControleurJeu(){}
 	
 	public void initNiveau(String nomNiveau, FenetreJeu fj){
 		nomNiveauEnCours = nomNiveau;
@@ -27,7 +26,8 @@ public class ControleurJeu extends Controleur{
 			e1.printStackTrace();
 		}
 		plateau.getPersonnage().addObserver(fj.getpPlateau());
-		
+		infoJeu = new InfoJeu();
+		infoJeu.addObserver(fj.getPanneauInfoJeu());
 		for(int i=0; i<plateau.getlElementsMobiles().size(); i++){
 			if(plateau.getlElementsMobiles().get(i).getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 				Diamant diamant = (Diamant)plateau.getlElementsMobiles().get(i);

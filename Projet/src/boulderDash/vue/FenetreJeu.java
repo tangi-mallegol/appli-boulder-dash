@@ -16,20 +16,25 @@ import boulderDash.vue.composant.elementsJeu.*;
 public class FenetreJeu extends FenetrePrincipale implements Observer{
 	private ControleurJeu controleurJeu;
 	private PanneauPlateau pPlateau;
+	private PanneauInfoJeu pInfoJeu;
 	
 	public FenetreJeu(ControleurJeu controleurJeu){
 		super();
 		this.controleurJeu = controleurJeu;	
 		
-		PanneauInfoJeu pInfoJeu = new PanneauInfoJeu();
+		pInfoJeu = new PanneauInfoJeu();
 		add(pInfoJeu, BorderLayout.EAST);
 		
 		MenuJeu menuJeu = new MenuJeu(this, controleurJeu);
 		setJMenuBar(menuJeu);
-		
 		this.addKeyListener(new EcouteurClavier());
+		
 	}
-
+	
+	public PanneauInfoJeu getPanneauInfoJeu(){
+		return this.pInfoJeu;
+	}
+	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		//Si la notification vient de Plateau alors c'est une nouvelle partie 

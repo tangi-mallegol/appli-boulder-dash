@@ -3,8 +3,10 @@ package boulderDash.modele;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
+import java.util.Observer;
 
 import boulderDash.modele.elementsJeu.*;
+import boulderDash.vue.PanneauInfoJeu;
 import boulderDash.vue.composant.elementsJeu.PanneauTerre;
 
 public class Plateau extends Observable{
@@ -20,8 +22,9 @@ public class Plateau extends Observable{
 		
 		tabElementsJeu = new ElementJeu[x][y];
 		lElementsMobiles = new LinkedList<ElementJeu>();	
+		
 	}
-
+	
 	public Plateau(int x, int y, String nomCarte){
 		this(x,y);
 		this.nomCarte = nomCarte;
@@ -101,6 +104,7 @@ public class Plateau extends Observable{
 			if(lElementsMobiles.get(i).getX() == x && lElementsMobiles.get(i).getY() == y)
 				lElementsMobiles.remove(i);
 		}
+		//infoJeu.setNb_diamant(infoJeu.getNb_diamant());
 	}
 	
 	public void tomberBas(ElementJeu elementJeu){
