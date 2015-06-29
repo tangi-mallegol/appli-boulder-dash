@@ -1,5 +1,7 @@
 package boulderDash.modele;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -14,14 +16,16 @@ public class InfoJeu extends Observable{
 		temps = 0;
 		nb_diamant = 0;
 		//Timer qui compte le nombre de seconde passées
-		Timer timer = new Timer();
+		/*Timer timer = new Timer();
 		timer.schedule(new TimerTask(){
 			public void run(){
 				temps++;
-				notifyObservers(new Integer[]{score, temps, nb_diamant});
 				setChanged();
+				notifyObservers(new Integer[]{score, temps, nb_diamant});
+				
 			}
-		}, 500,1000);
+		}, 500,1000);*/
+		
 	}
 
 	public int getScore() {
@@ -48,5 +52,5 @@ public class InfoJeu extends Observable{
 		this.nb_diamant = nb_diamant;
 	}
 	
-	
+
 }

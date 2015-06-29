@@ -26,9 +26,6 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		
 		try {
 			ii = ImageIO.read(new File("./donnees/images/rockford.gif"));
-			//imageLabel.setIcon(ii);
-	        //imageLabel.setBounds(16,16,ii.getIconWidth(),ii.getIconHeight());
-	        //add(imageLabel);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -37,16 +34,12 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 		TableauImage[0][0].setIcon(new ImageIcon(ii.getSubimage(8 ,8 ,16,16)));
 		TableauImage[0][0].setBounds(0, 0, 16, 16);
 		for(int i = 1; i < 6; i ++){
-			//System.out.println("i = " + i);
 			for(int j = 0; j < 8; j ++){
-				//System.out.println("j = " + j);
 				TableauImage[i][j] = new JLabel();
 				TableauImage[i][j].setIcon(new ImageIcon(ii.getSubimage(7 + 16*j +8*j,7 + 16*i + 8*i ,16,16)));
 				TableauImage[i][j].setBounds(0, 0, 16, 16);
 			}
 		}
-		//add(TableauImage[0][0]);
-		//sprite.run();
 		Move();
 	}
 
@@ -105,7 +98,6 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 			try {
 				sleep(50);
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			while(true){
@@ -120,7 +112,6 @@ public class PanneauPersonnage extends PanneauElementJeu implements Observer{
 					//On met un temps de 50 ms entre chaque changement de frame
 					sleep(50);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

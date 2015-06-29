@@ -26,8 +26,7 @@ public class ControleurJeu extends Controleur{
 			e1.printStackTrace();
 		}
 		plateau.getPersonnage().addObserver(fj.getpPlateau());
-		infoJeu = new InfoJeu();
-		infoJeu.addObserver(fj.getPanneauInfoJeu());
+		
 		for(int i=0; i<plateau.getlElementsMobiles().size(); i++){
 			if(plateau.getlElementsMobiles().get(i).getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 				Diamant diamant = (Diamant)plateau.getlElementsMobiles().get(i);
@@ -38,6 +37,11 @@ public class ControleurJeu extends Controleur{
 			}
 		}
 		plateau.verifElementsMobiles();
+	}
+	
+	public void initInfoJeu(FenetreJeu fj){
+		infoJeu = new InfoJeu();
+		infoJeu.addObserver(fj.getPanneauInfoJeu());
 	}
 	
 	public void NouvellePartie(FenetreJeu fj){

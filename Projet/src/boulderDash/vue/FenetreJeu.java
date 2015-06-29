@@ -24,10 +24,12 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 		
 		pInfoJeu = new PanneauInfoJeu();
 		add(pInfoJeu, BorderLayout.EAST);
+		controleurJeu.initInfoJeu(this);
 		
 		MenuJeu menuJeu = new MenuJeu(this, controleurJeu);
 		setJMenuBar(menuJeu);
 		this.addKeyListener(new EcouteurClavier());
+		
 		
 	}
 	
@@ -37,8 +39,10 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 	
 	@Override
 	public void update(Observable arg0, Object arg1) {
+		
 		//Si la notification vient de Plateau alors c'est une nouvelle partie 
-		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau") && !arg1.getClass().getName().equals("[Ljava.lang.String;")){			
+		if(arg0.getClass().getName().equals("boulderDash.modele.Plateau") && !arg1.getClass().getName().equals("[Ljava.lang.String;")){
+			//controleurJeu.initInfoJeu(this);
 			ElementJeu tabElementsJeu[][] = (ElementJeu[][]) arg1;
 			
 			//Si c'est la première initialisation, pPlateau ne sera pas présent : nullPointerException
@@ -68,12 +72,12 @@ public class FenetreJeu extends FenetrePrincipale implements Observer{
 					else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant"))
 						pPlateau.addPanneauElementJeu(new PanneauDiamant(), j, i);
 				}
-			}
-			add(pPlateau, BorderLayout.CENTER);
-			this.pack();
-			this.setLocationRelativeTo(null);
-			this.repaint();
-			this.setVisible(true);
+				add(pPlateau, BorderLayout.CENTER);
+				this.pack();
+				this.setLocationRelativeTo(null);
+				this.repaint();
+				this.setVisible(true);
+			}			
 		}
 	}
 	
