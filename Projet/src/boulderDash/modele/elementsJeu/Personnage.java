@@ -16,22 +16,22 @@ public class Personnage extends Observable implements ElementJeu{
 	}
 	
 	public void moveUP(){
-		setLocation(x, y-1);
+		setLocation(x, y-1, null);
 	}
 	
 	public void moveDOWN(){
-		setLocation(x, y+1);
+		setLocation(x, y+1, null);
 	}
 	
 	public void moveRIGHT(){
-		setLocation(x+1, y);
+		setLocation(x+1, y, null);
 	}
 	
 	public void moveLEFT(){
-		setLocation(x-1, y);
+		setLocation(x-1, y, null);
 	}
 	
-	public void setLocation(Integer x, Integer y){
+	public void setLocation(Integer x, Integer y, String action){
 		String[] tabLocation = new String[4];
 		
 		boolean bDeplaceOK = true;
@@ -80,8 +80,6 @@ public class Personnage extends Observable implements ElementJeu{
 			tabLocation[3] = "OUI";
 		}
 		
-		System.out.println(bPousseRocher);
-		
 		if(bDeplaceOK && !bPousseRocher){			
 			plateau.deplaceElement(this.x, this.y, x, y);
 			
@@ -93,14 +91,13 @@ public class Personnage extends Observable implements ElementJeu{
 			notifyObservers(tabLocation);
 		}
 		
-		if(bPousseRocher){
-			System.out.println("TEST");
-			
-			
-			if(tabLocation[2].equals("GAUCHE"))
-				plateau.deplaceElement(this.x-1, this.y, x-1, y);
-			if(tabLocation[2].equals("DROITE"))
-				plateau.deplaceElement(this.x+1, this.y, x+1, y);
+		if(bPousseRocher){			
+			if(tabLocation[2].equals("GAUCHE")){
+				plateau.getTabElementsJeu()[this.x-1][this.y].setLocation(x-1, y, "pousser");
+			}
+			if(tabLocation[2].equals("DROITE")){
+				plateau.getTabElementsJeu()[this.x+1][this.y].setLocation(x+1, y, "pousser");
+			}
 			
 			plateau.deplaceElement(this.x, this.y, x, y);
 			

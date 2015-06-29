@@ -16,5 +16,8 @@ public class MurAcier implements ElementJeu{
 
 	//Traduit par = sur le .csv
 	
-	
+	public void setLocation(Integer x, Integer y, String action){
+		this.x = x;
+		this.y = y;
+	}
 }

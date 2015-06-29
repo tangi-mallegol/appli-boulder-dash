@@ -15,4 +15,9 @@ public class Terre implements ElementJeu{
 
 	public int getX() {return x;}
 	public int getY() {return y;}
+	
+	public void setLocation(Integer x, Integer y, String action){
+		this.x = x;
+		this.y = y;
+	}
 }

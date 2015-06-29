@@ -19,24 +19,36 @@ public class Pierre extends Observable implements ElementJeu{
 	public int getX() {return x;}
 	public int getY() {return y;}
 
-	public void setLocation(Integer x, Integer y){
+	public void setLocation(Integer x, Integer y, String action){
 		String[] tabLocation = new String[3];
 		
-		if(this.y<y && this.x==x){
-			tabLocation[0] = x.toString();
-			tabLocation[1] = y.toString();
-			tabLocation[2] = "BAS";
-		}else if(this.y<y && this.x>x){
-			tabLocation[0] = x.toString();
-			tabLocation[1] = y.toString();
-			tabLocation[2] = "GAUCHE";
-			System.out.println("GAUCHE");
-		}else if(this.y<y && this.x<x){
-			tabLocation[0] = x.toString();
-			tabLocation[1] = y.toString();
-			tabLocation[2] = "DROITE";
-			System.out.println("Droite");
+		if(action.equals("tomber")){
+			if(this.y<y && this.x==x){
+				tabLocation[0] = x.toString();
+				tabLocation[1] = y.toString();
+				tabLocation[2] = "BAS";
+			}else if(this.y<y && this.x>x){
+				tabLocation[0] = x.toString();
+				tabLocation[1] = y.toString();
+				tabLocation[2] = "TOMBEGAUCHE";
+			}else if(this.y<y && this.x<x){
+				tabLocation[0] = x.toString();
+				tabLocation[1] = y.toString();
+				tabLocation[2] = "TOMBEDROITE";
+			}
+		}else if(action.equals("pousser")){
+			if(this.x<x){
+				tabLocation[0] = x.toString();
+				tabLocation[1] = y.toString();
+				tabLocation[2] = "DROITE";
+			}else if(this.x>x){
+				tabLocation[0] = x.toString();
+				tabLocation[1] = y.toString();
+				tabLocation[2] = "GAUCHE";
+			}
 		}
+		
+		
 			
 		plateau.deplaceElement(this.x, this.y, x, y);
 		

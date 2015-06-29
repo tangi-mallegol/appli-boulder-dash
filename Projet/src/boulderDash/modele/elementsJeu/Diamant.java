@@ -19,7 +19,7 @@ public class Diamant extends Observable implements ElementJeu{
 	public int getX() {return x;}
 	public int getY() {return y;}
 	
-	public void setLocation(Integer x, Integer y){
+	public void setLocation(Integer x, Integer y, String action){
 		String[] tabLocation = new String[3];
 		
 		if(this.y<y){

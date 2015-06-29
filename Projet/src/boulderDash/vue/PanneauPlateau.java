@@ -120,33 +120,24 @@ public class PanneauPlateau extends JPanel implements Observer{
 				deplace(Integer.parseInt(tabLocation[0]),Integer.parseInt(tabLocation[1])+1, Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'h');
 			if(tabLocation[2].equals("BAS"))
 				deplace(Integer.parseInt(tabLocation[0]),Integer.parseInt(tabLocation[1])-1, Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'b');	
-			
-			if(tabLocation[3].equals("OUI")){
-				if(tabLocation[2].equals("DROITE")){
-					deplace(Integer.parseInt(tabLocation[0]),Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0])+1, Integer.parseInt(tabLocation[1]),'d');
-					deplace(Integer.parseInt(tabLocation[0])-1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'d');						
-				}
-				if(tabLocation[2].equals("GAUCHE")){
-					deplace(Integer.parseInt(tabLocation[0]),Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0])-1, Integer.parseInt(tabLocation[1]),'g');
-					deplace(Integer.parseInt(tabLocation[0])+1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'g');
-				}
-			}
-			
-			if(tabLocation[3].equals("NON")){
-				if(tabLocation[2].equals("DROITE"))
-					deplace(Integer.parseInt(tabLocation[0])-1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'d');						
-				if(tabLocation[2].equals("GAUCHE"))
-					deplace(Integer.parseInt(tabLocation[0])+1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'g');
-			}
+
+			if(tabLocation[2].equals("DROITE"))
+				deplace(Integer.parseInt(tabLocation[0])-1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'d');						
+			if(tabLocation[2].equals("GAUCHE"))
+				deplace(Integer.parseInt(tabLocation[0])+1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'g');
 			
 		}else if(arg0.getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre")){
 			String[] tabLocation = (String[])arg1;
 			if(tabLocation[2].equals("BAS"))
 				deplace(Integer.parseInt(tabLocation[0]),Integer.parseInt(tabLocation[1])-1, Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'b');
-			if(tabLocation[2].equals("DROITE"))				
+			if(tabLocation[2].equals("TOMBEDROITE"))				
 				deplace(Integer.parseInt(tabLocation[0])-1,Integer.parseInt(tabLocation[1])-1, Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'d');
-			if(tabLocation[2].equals("GAUCHE"))				
+			if(tabLocation[2].equals("TOMBEGAUCHE"))				
 				deplace(Integer.parseInt(tabLocation[0])+1,Integer.parseInt(tabLocation[1])-1, Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'g');
+			if(tabLocation[2].equals("DROITE"))				
+				deplace(Integer.parseInt(tabLocation[0])-1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'d');
+			if(tabLocation[2].equals("GAUCHE"))				
+				deplace(Integer.parseInt(tabLocation[0])+1,Integer.parseInt(tabLocation[1]), Integer.parseInt(tabLocation[0]), Integer.parseInt(tabLocation[1]),'g');
 		}else if(arg0.getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 			String[] tabLocation = (String[])arg1;
 			if(tabLocation[2].equals("BAS"))

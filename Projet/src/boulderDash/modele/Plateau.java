@@ -110,10 +110,10 @@ public class Plateau extends Observable{
 		
 		if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 			Diamant diamant = (Diamant)elementJeu;
-			diamant.setLocation(xElement, yElement+1);
+			diamant.setLocation(xElement, yElement+1, "tomber");
 		}else if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre")){
 			Pierre pierre = (Pierre)elementJeu;
-			pierre.setLocation(xElement, yElement+1);
+			pierre.setLocation(xElement, yElement+1, "tomber");
 		}
 		
 		modifPanneauPlateau("Vide", xElement, yElement);
@@ -129,10 +129,10 @@ public class Plateau extends Observable{
 		
 		if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 			Diamant diamant = (Diamant)elementJeu;
-			diamant.setLocation(xElement+1, yElement+1);
+			diamant.setLocation(xElement+1, yElement+1, "tomber");
 		}else if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre")){
 			Pierre pierre = (Pierre)elementJeu;
-			pierre.setLocation(xElement+1, yElement+1);
+			pierre.setLocation(xElement+1, yElement+1, "tomber");
 		}
 		
 		modifPanneauPlateau("Vide", xElement, yElement);
@@ -148,10 +148,10 @@ public class Plateau extends Observable{
 		
 		if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant")){
 			Diamant diamant = (Diamant)elementJeu;
-			diamant.setLocation(xElement-1, yElement+1);
+			diamant.setLocation(xElement-1, yElement+1, "tomber");
 		}else if(elementJeu.getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre")){
 			Pierre pierre = (Pierre)elementJeu;
-			pierre.setLocation(xElement-1, yElement+1);
+			pierre.setLocation(xElement-1, yElement+1, "tomber");
 		}
 		
 		modifPanneauPlateau("Vide", xElement, yElement);
