@@ -22,13 +22,13 @@ public class PanneauInfoEditeur extends JPanel{
 	public PanneauInfoEditeur(){
 		setLayout(new BorderLayout());
 		sElementEnCours = "Terre";
-		GridLayout layoutpElements = new GridLayout(3,4);
+		GridLayout layoutpElements = new GridLayout(4,2);
 		layoutpElements.setHgap(5);
 		layoutpElements.setVgap(5);
 		
 		pGridElements = new JPanel(layoutpElements);
 		
-		tabpElementsJeu = new PanneauElementJeu[10];
+		tabpElementsJeu = new PanneauElementJeu[7];
 		
 		tabpElementsJeu[0] = new PanneauPersonnage();
 		tabpElementsJeu[1] = new PanneauMurAcier();
@@ -36,10 +36,7 @@ public class PanneauInfoEditeur extends JPanel{
 		tabpElementsJeu[3] = new PanneauTerre();
 		tabpElementsJeu[4] = new PanneauMurSimple();
 		tabpElementsJeu[5] = new PanneauPierre();
-		tabpElementsJeu[6] = new PanneauPierre();
-		tabpElementsJeu[7] = new PanneauPierre();
-		tabpElementsJeu[8] = new PanneauPierre();
-		tabpElementsJeu[9] = new PanneauPierre();
+		tabpElementsJeu[6] = new PanneauDiamant();
 		
 		
 		EcouteurSouris ecouteurSouris = new EcouteurSouris();
@@ -69,6 +66,12 @@ public class PanneauInfoEditeur extends JPanel{
 		public void mouseClicked(MouseEvent e) {
 			sElementEnCours = e.getSource().getClass().getName().substring(45, e.getSource().getClass().getName().length());
 			System.out.println(sElementEnCours);
+			
+			pInfos.removeAll();
+			pInfos.add(new PanneauVide());			
+			add(pInfos, BorderLayout.SOUTH);
+			pInfos.repaint();
+			repaint();
 		}
 
 		public void mouseEntered(MouseEvent e)  {}

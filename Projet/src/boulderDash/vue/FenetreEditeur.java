@@ -9,6 +9,7 @@ import java.util.Observer;
 import boulderDash.controleur.ControleurEditeur;
 import boulderDash.modele.ElementJeu;
 import boulderDash.vue.composant.MenuEditeur;
+import boulderDash.vue.composant.elementsJeu.PanneauDiamant;
 import boulderDash.vue.composant.elementsJeu.PanneauMurAcier;
 import boulderDash.vue.composant.elementsJeu.PanneauMurMagique;
 import boulderDash.vue.composant.elementsJeu.PanneauMurSimple;
@@ -57,6 +58,8 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 							pPlateau.addPanneauElementJeu(new PanneauPierre(), j, i);
 						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Personnage"))
 							pPlateau.addPanneauElementJeu(new PanneauPersonnage(), j, i);
+						else if(tabElementsJeu[j][i].getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant"))
+							pPlateau.addPanneauElementJeu(new PanneauDiamant(), j, i);
 					}
 				}
 				add(pPlateau, BorderLayout.CENTER);
@@ -81,6 +84,8 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 					this.pPlateau.modifPanneauElementJeu(new PanneauPierre(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 				else if(tabModif[0].equals("Personnage"))
 					this.pPlateau.modifPanneauElementJeu(new PanneauPersonnage(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
+				else if(tabModif[0].equals("Diamant"))
+					this.pPlateau.modifPanneauElementJeu(new PanneauDiamant(), Integer.parseInt(tabModif[1]), Integer.parseInt(tabModif[2]));
 								
 				this.repaint();
 				this.setVisible(true);
@@ -96,7 +101,6 @@ public class FenetreEditeur extends FenetrePrincipale implements Observer{
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			System.out.println(e.getX()/16+" "+((e.getY()/16)-2));
 			controleurEditeur.addElement(e.getX()/16, ((e.getY()/16)-2), pInfoEditeur.getElementEnCours());
 		}
 

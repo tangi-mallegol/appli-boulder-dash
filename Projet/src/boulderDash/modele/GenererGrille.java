@@ -13,8 +13,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import boulderDash.vue.FenetreJeu;
+import boulderDash.vue.FenetrePrincipale;
 
-public class GenererGrille {
+public class GenererGrille<F extends FenetrePrincipale> {
 	
 	private int x;
 	private int y;
@@ -29,7 +30,7 @@ public class GenererGrille {
 		this.nom = nom;
 	}
 	
-	public Plateau creerPlateau(FenetreJeu fj) throws IOException{
+	public Plateau creerPlateau(F fj) throws IOException{
 		//Recupération des fichiers
 		this.ListeElements = new LinkedList<String>();
 		File file = null;
@@ -124,14 +125,5 @@ public class GenererGrille {
 	
 	public int getY(){
 		return this.y;
-	}
-	/*public static void main(String[] args){
-		GenererGrille grille = new GenererGrille(1);
-		try {
-			grille.creerPlateau();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}*/
-	
+	}	
 }

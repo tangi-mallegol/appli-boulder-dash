@@ -32,9 +32,10 @@ public class Personnage extends Observable implements ElementJeu{
 	}
 	
 	public void setLocation(Integer x, Integer y){
-		String[] tabLocation = new String[3];
+		String[] tabLocation = new String[4];
 		
-		boolean bDeplaceOK = true;		
+		boolean bDeplaceOK = true;
+		boolean bPousseRocher = false;	
 		
 		if(plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.MurSimple") ||
 		   plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.MurAcier")  ||
@@ -44,27 +45,63 @@ public class Personnage extends Observable implements ElementJeu{
 		if(plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Diamant"))
 				plateau.supprDiamant(x, y);
 		
-		if(bDeplaceOK){			
-			if(this.x<x){
-				tabLocation[0] = x.toString();
-				tabLocation[1] = y.toString();
-				tabLocation[2] = "DROITE";
-			}else if(this.x>x){
-				tabLocation[0] = x.toString();
-				tabLocation[1] = y.toString();
-				tabLocation[2] = "GAUCHE";
-			}
-			
-			if(this.y<y){
-				tabLocation[0] = x.toString();
-				tabLocation[1] = y.toString();
-				tabLocation[2] = "BAS";
-			}else if(this.y>y){
-				tabLocation[0] = x.toString();
-				tabLocation[1] = y.toString();
-				tabLocation[2] = "HAUT";
-			}
 				
+		if(this.x<x){
+			tabLocation[0] = x.toString();
+			tabLocation[1] = y.toString();
+			tabLocation[2] = "DROITE";
+		}else if(this.x>x){
+			tabLocation[0] = x.toString();
+			tabLocation[1] = y.toString();
+			tabLocation[2] = "GAUCHE";
+		}
+		
+		if(this.y<y){
+			tabLocation[0] = x.toString();
+			tabLocation[1] = y.toString();
+			tabLocation[2] = "BAS";
+		}else if(this.y>y){
+			tabLocation[0] = x.toString();
+			tabLocation[1] = y.toString();
+			tabLocation[2] = "HAUT";
+		}
+		
+		tabLocation[3] = "NON";
+		
+		if(tabLocation[2].equals("DROITE") && plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre") &&
+		   plateau.getTabElementsJeu()[x+1][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Vide")){
+			 bPousseRocher = true;
+			 tabLocation[3] = "OUI";
+		}
+		
+		if(tabLocation[2].equals("GAUCHE") && plateau.getTabElementsJeu()[x][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Pierre") &&
+		   plateau.getTabElementsJeu()[x-1][y].getClass().getName().equals("boulderDash.modele.elementsJeu.Vide")){
+			bPousseRocher = true;
+			tabLocation[3] = "OUI";
+		}
+		
+		System.out.println(bPousseRocher);
+		
+		if(bDeplaceOK && !bPousseRocher){			
+			plateau.deplaceElement(this.x, this.y, x, y);
+			
+			this.x = x;
+			this.y = y;			
+			
+			setChanged();
+			
+			notifyObservers(tabLocation);
+		}
+		
+		if(bPousseRocher){
+			System.out.println("TEST");
+			
+			
+			if(tabLocation[2].equals("GAUCHE"))
+				plateau.deplaceElement(this.x-1, this.y, x-1, y);
+			if(tabLocation[2].equals("DROITE"))
+				plateau.deplaceElement(this.x+1, this.y, x+1, y);
+			
 			plateau.deplaceElement(this.x, this.y, x, y);
 			
 			this.x = x;

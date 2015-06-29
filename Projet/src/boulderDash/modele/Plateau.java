@@ -21,7 +21,7 @@ public class Plateau extends Observable{
 		tabElementsJeu = new ElementJeu[x][y];
 		lElementsMobiles = new LinkedList<ElementJeu>();	
 	}
-	
+
 	public Plateau(int x, int y, String nomCarte){
 		this(x,y);
 		this.nomCarte = nomCarte;
@@ -165,6 +165,10 @@ public class Plateau extends Observable{
 		tabElementsJeu[x2][y2] = tabElementsJeu[x1][y1];
 		tabElementsJeu[x1][y1] = new Vide();
 	}
+	
+
+	
+	public void setNomCarte(String nomCarte) 	  { this.nomCarte = nomCarte; }
 	
 	public ElementJeu[][] getTabElementsJeu() 	  { return tabElementsJeu;	 }
 	public Personnage getPersonnage()			  { return personnage; 	 	 }	

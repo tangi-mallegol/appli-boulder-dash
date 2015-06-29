@@ -1,8 +1,14 @@
 package boulderDash.controleur;
 
+import java.io.IOException;
+
 import boulderDash.modele.GenererCSV;
+import boulderDash.modele.GenererGrille;
 import boulderDash.modele.Plateau;
+import boulderDash.modele.elementsJeu.Diamant;
+import boulderDash.modele.elementsJeu.Pierre;
 import boulderDash.vue.FenetreEditeur;
+import boulderDash.vue.FenetreJeu;
 import boulderDash.vue.FenetreTaillePlateau;
 
 public class ControleurEditeur extends Controleur{
@@ -22,6 +28,19 @@ public class ControleurEditeur extends Controleur{
 		plateau.initPanneauPlateau();
 	}
 	
+	public void initNiveau(String nomNiveau, FenetreEditeur fEditeur){
+		String nomNiveauEnCours = nomNiveau;
+		GenererGrille genererGrille = new GenererGrille(nomNiveau);
+		
+		try {
+			plateau = genererGrille.creerPlateau(fEditeur);
+			plateau.setNomCarte(nomNiveau);
+			plateau.addObserver(fEditeur);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	public void addElement(int x, int y, String element){
 		if(element.equals("Personnage"))
 			plateau.addPersonnage(x, y);
@@ -34,6 +53,9 @@ public class ControleurEditeur extends Controleur{
 		
 		if(element.equals("Pierre"))
 			plateau.addPierre(x, y);
+		
+		if(element.equals("Diamant"))
+			plateau.addDiamant(x, y);
 		
 		if(element.equals("Vide"))
 			plateau.addVide(x, y);

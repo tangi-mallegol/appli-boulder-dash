@@ -18,7 +18,7 @@ public class GenererCSV {
 		ElementJeu[][] tabElementsJeu = plateau.getTabElementsJeu();
 		
 		try {
-			FileWriter fw = new FileWriter(adressedufichier, true);
+			FileWriter fw = new FileWriter(adressedufichier, false);
 			BufferedWriter output = new BufferedWriter(fw);
 			for(int i = 0; i < tabElementsJeu[0].length; i++){
 				for(int j = 0; j < tabElementsJeu.length; j++){
